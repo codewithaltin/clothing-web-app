@@ -1,0 +1,54 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+p {
+  font-size: 1.5rem;
+  transform: scaleX(0.8);
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+.list {
+  justify-content: center;
+  list-style-type: none;
+}
+
+.list :not(last-child) {
+  margin: 10px;
+}
+
+.list {
+  color: rgb(0, 0, 0);
+  font-family: Poppins;
+}
+.loader {
+  margin-left: auto;
+  position: absolute;
+}
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+.header ul :last-child {
+  position: relative;
+  float: right;
+}
+.list li:hover {
+  transition: 0.2s;
+  color: rgb(69, 69, 69);
+  cursor: pointer;
+}
+.header li:active {
+  transition: 0.1s;
+  scale: 1.001;
+}

@@ -5,24 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LOG IN / CREATE ACCOUNT</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla:wght@200;300&family=Mulish:wght@200;400&family=PT+Sans&family=Pacifico&family=Shizuru&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
     <link rel="stylesheet" href="./styles/login.css" />
-    <link rel="stylesheet" href="./styles/header.css" />
-    <link rel="stylesheet" href="./styles/footer.css" />
-    <script id="replace_with_navbar" src="scripts/nav.js"></script>
-
-    <script src="./scripts/loginValidation.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   </head>
-
   <body>
-    <div id="header"></div>
+    <header id="header"></header>
     <div id="logindiv">
       <div id="log">
         <section>
@@ -44,13 +31,8 @@
                 required
               />
             </div>
-            <a href="" class=""
-              ><p class="size6">HAVE YOU FORGOTTEN YOUR PASSWORD?</p>
-            </a>
-            <!-- <button type="submit">LOG IN</button> -->
-
-            <!--<a href="">HAVE YOU FORGOTTEN YOUR PASSWORD?</a>-->
-            <div id="logbttn">
+            <p class="size6 pointer">HAVE YOU FORGOTTEN YOUR PASSWORD?</p>
+            <div class="bttn">
               <button type="submit">LOG IN</button>
             </div>
           </form>
@@ -61,39 +43,33 @@
           <h3>REGISTER</h3>
           <div class="size">
             <p>
-              IF YOU STILL DON'T HAVE A
+              IF YOU STILL DON'T HAVE AN
               <span>
-                <strong>ALTINIUM</strong> "ACCOUNT, USE THIS OPTION TO ACCESS
-                THE REGISTRATION FORM."
+                <strong>ALTINIUM</strong> ACCOUNT, USE THIS OPTION TO ACCESS THE
+                REGISTRATION FORM.
               </span>
             </p>
           </div>
-
           <div class="size">
             <p>
-              BY GIVING US YOUR DETAILS, PURCHASING <b>ALTINIUM</b>
+              BY GIVING US YOUR DETAILS, PURCHASING IN <b>ALTINIUM</b>
 
-              "WILL BE FASTER AND AN ENJOYABLE EXPERIENCE."
+              WILL BE FASTER AND AN ENJOYABLE EXPERIENCE.
             </p>
           </div>
 
-          <div id="bttn">
-            <button><a href="create_account.html"> CREATE ACCOUNT</a></button>
+          <div class="bttn">
+            <button><a href="register.html"> CREATE ACCOUNT</a></button>
           </div>
         </section>
       </div>
     </div>
-    <p><a style="position: absolute; float:right; href="main.html">Back</a></p>
-    <div id="footer"></div>
+    <footer id="footer"></footer>
   </body>
+  <script>
+    $(function () {
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+    });
+  </script>
 </html>
-<script src="./scripts/login.js"></script>
-
-<!--<script type="module">
-  import { header } from "./components/header.js";
-  import { footers } from "./components/footer.js";
-  let navbar_div = document.getElementById("header");
-  let footer_div = document.getElementById("footer");
-  footer_div.innerHTML = footers();
-  navbar_div.innerHTML = header();
-</script>-->

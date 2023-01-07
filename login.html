@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LOG IN / CREATE ACCOUNT</title>
+    <title>LOG IN / CREATE ACCOUNT - ALTINIUM Offical Website</title>
     <link rel="stylesheet" href="./styles/login.css" />
+    <link rel="stylesheet" href="scripts/validation.js" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   </head>
   <body>
@@ -14,7 +15,7 @@
       <div id="log">
         <section>
           <h3>LOG IN</h3>
-          <form id="form" onsubmit="login(event)">
+          <form>
             <div id="ep">
               <input
                 type="email"
@@ -23,6 +24,8 @@
                 placeholder="E-MAIL"
                 required
               />
+              <i class="error error-icon fas fa-exclamation-circle"></i>
+              <div class="error error-txt">Email can't be blank</div>
               <br />
               <input
                 type="password"
@@ -30,6 +33,8 @@
                 placeholder="PASSWORD"
                 required
               />
+              <i class="error error-icon fas fa-exclamation-circle"></i>
+              <div class="error error-txt">Password can't be blank</div>
             </div>
             <p class="size6 pointer">HAVE YOU FORGOTTEN YOUR PASSWORD?</p>
             <div class="bttn">
@@ -58,8 +63,10 @@
             </p>
           </div>
 
-          <div class="bttn">
-            <button><a href="register.html"> CREATE ACCOUNT</a></button>
+          <div class="reg-bttn bttn">
+            <button class="">
+              <a href="register.html"> CREATE ACCOUNT</a>
+            </button>
           </div>
         </section>
       </div>

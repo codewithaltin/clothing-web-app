@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "", "Poppins", sans-serif;
 }
 html {
   font-size: 62.5%;
@@ -55,6 +55,7 @@ input[type="checkbox"] {
 
 @media (max-width: 844px) {
   nav .menu-btn i {
+    color: black;
     display: block;
   }
   #click:checked ~ .menu-btn i:before {

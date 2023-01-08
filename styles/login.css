@@ -1,13 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 * {
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
-header {
-  position: sticky;
-}
 html {
   font-size: 62.5%;
 }
+
 #logindiv {
   width: 80%;
   height: 100%;
@@ -33,7 +32,6 @@ html {
 }
 .size6 {
   font-size: inherit;
-  font-weight: bold;
   margin-top: 1.5rem;
 }
 .size p {
@@ -66,17 +64,21 @@ button a {
   font-size: x-small;
   color: white;
 }
-#inputEmail {
+
+.inputEmail {
   border: 0.01px solid gray;
   margin-top: 20px;
   width: 130%;
   height: 30px;
 }
-#inputPasswd {
+.inputPasswd {
   border: 0.01px solid gray;
   margin-top: 20px;
   width: 130%;
   height: 30px;
+}
+.errorInput {
+  border: 0.1px solid red;
 }
 .reg-bttn {
   margin-top: 28%;
@@ -94,7 +96,6 @@ button a {
   #log {
     margin-left: 10%;
   }
-
   .bttn button {
     width: 10em;
     height: 3em;
@@ -110,7 +111,6 @@ button a {
   }
   .size6 {
     font-size: 12px;
-    font-weight: bold;
     margin-top: 10px;
   }
   .size p {
@@ -128,16 +128,49 @@ button a {
     font-weight: bold;
     font-size: 35px;
   }
-  #inputEmail {
+  .inputEmail {
     border: 0.01px solid gray;
 
     width: 200%;
     height: 20px;
   }
-  #inputPasswd {
+
+  .inputPasswd {
     border: 0.01px solid gray;
 
     width: 200%;
     height: 30px;
   }
+  .errorInput {
+    border: 0.01px solid red;
+  }
+}
+form .field.shake {
+  animation: shake 0.2s ease-in-out;
+}
+@keyframes shake {
+  0%,
+  100% {
+    margin-left: 0px;
+  }
+  20%,
+  80% {
+    margin-left: -6px;
+  }
+  40%,
+  60% {
+    margin-left: 6px;
+  }
+}
+form .field .error-txt {
+  color: red;
+  text-align: left;
+  margin-top: 5px;
+}
+form .field .error {
+  display: none;
+}
+form .field.shake .error,
+form .field.error .error {
+  display: block;
 }

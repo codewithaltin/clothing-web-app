@@ -16,25 +16,22 @@
         <section>
           <h3>LOG IN</h3>
           <form>
-            <div id="ep">
+            <div class="field email">
               <input
-                type="email"
-                id="inputEmail"
-                onclick="clickForPass()"
-                placeholder="E-MAIL"
-                required
+                type="text"
+                class="inputEmail"
+                placeholder="Email Address"
               />
-              <i class="error error-icon fas fa-exclamation-circle"></i>
-              <div class="error error-txt">Email can't be blank</div>
-              <br />
+              <div class="error error-txt size6">Email can't be blank</div>
+            </div>
+            <br />
+            <div class="field password">
               <input
                 type="password"
-                id="inputPasswd"
-                placeholder="PASSWORD"
-                required
+                class="inputPasswd"
+                placeholder="Password"
               />
-              <i class="error error-icon fas fa-exclamation-circle"></i>
-              <div class="error error-txt">Password can't be blank</div>
+              <div class="error error-txt size6">Password can't be blank</div>
             </div>
             <p class="size6 pointer">HAVE YOU FORGOTTEN YOUR PASSWORD?</p>
             <div class="bttn">
@@ -72,6 +69,7 @@
       </div>
     </div>
     <footer id="footer"></footer>
+    <script src="scripts/validation.js"></script>
   </body>
   <script>
     $(function () {

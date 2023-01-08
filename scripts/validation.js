@@ -5,8 +5,7 @@ const form = document.querySelector("form");
   (pInput = pField.querySelector("input"));
 
 form.onsubmit = (e) => {
-  e.preventDefault(); //preventing from form submitting
-  //if email and password is blank then add shake class in it else call specified function
+  e.preventDefault();
   eInput.value == "" ? eField.classList.add("shake", "error") : checkEmail();
   pInput.value == "" ? pField.classList.add("shake", "error") : checkPass();
 
@@ -25,7 +24,7 @@ form.onsubmit = (e) => {
 
   function checkEmail() {
     //checkEmail function
-    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; //pattern for validate email
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     if (!eInput.value.match(pattern)) {
       //if pattern not matched then add error and remove valid class
       eField.classList.add("error");

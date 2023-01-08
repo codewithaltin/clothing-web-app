@@ -12,33 +12,25 @@
     <div id="header"></div>
     <div id="logpage">
       <h3>PERSONAL DETAILS</h3>
-
       <div id="fill">
-        <form onsubmit="signUp(event)">
-          <input id="email" type="email" placeholder="E-MAIL" required />
+        <form id="form" action="#">
+          <div class="input-control">
+            <input id="email" name="email" type="email" placeholder="E-MAIL" />
+            <div class="error"></div>
+          </div>
           <br />
-          <input
-            id="password"
-            type="password"
-            placeholder="PASSWORD"
-            required
-          />
-          <input
-            id="reapeatpassword"
-            type="password"
-            placeholder="REPEAT PASSWORD"
-            required
-          />
+          <div class="input-control">
+            <input id="password" type="password" placeholder="PASSWORD" />
+            <input
+              id="reapeatpassword"
+              type="password"
+              placeholder="REPEAT PASSWORD"
+            />
+            <div class="error"></div>
+          </div>
           <br />
-
-          <input
-            id="first-name"
-            type="text"
-            placeholder="FIRST NAME"
-            required
-          />
-          <input id="last-name" type="text" placeholder="LAST NAME" required />
-
+          <input id="first-name" type="text" placeholder="FIRST NAME" />
+          <input id="last-name" type="text" placeholder="LAST NAME" />
           <div id="checklast">
             <div id="fb">
               <input id="checkmark" type="checkbox" />I WISH TO RECEIVE ALTINIUM
@@ -52,8 +44,8 @@
           <div id="bttn">
             <button type="submit">CREATE ACCOUNT</button>
           </div>
-        </form>
       </div>
+    </form>
     </div>
     <div id="footer"></div>
   </body>

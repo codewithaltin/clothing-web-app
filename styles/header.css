@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "", "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 html {
   font-size: 62.5%;
@@ -20,6 +20,7 @@ nav {
   justify-content: space-between;
   padding: 0 30px 0 30px;
   flex-wrap: wrap;
+  z-index: 10;
 }
 
 nav .logo {
@@ -37,11 +38,23 @@ nav ul {
 nav ul li {
   margin: 0 5px;
 }
+
 nav ul li a {
   font-size: 1.3rem;
-  padding: 8px 20px;
+  padding: 8px 10px;
   border-radius: 5px;
   letter-spacing: 1px;
+}
+nav ul li:first-child {
+  margin-right: 20vh;
+  padding: 0;
+}
+.search {
+  padding: 0;
+}
+.first-child {
+  width: 100px;
+  border-bottom: 1px solid black;
 }
 nav .menu-btn i {
   color: #000;

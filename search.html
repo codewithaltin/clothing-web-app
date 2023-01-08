@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/search.css" />
+    <title>Search engine | ZARA</title>
+  </head>
+  <body>
+    <header id="header"></header>
+    <div id="container">
+      <div id="main">
+        <input
+          type="text"
+          name=""
+          id="searchbar"
+          placeholder="ENTER SEARCH TERMS"
+        />
+        <div id="trending_product">
+          <p>TRENDS</p>
+          <p >SHIRT MEN</p>
+          <p >SHOES</p>
+          <p >WOMEN ACCESSORIES</p>
+          <p >WOMEN JACKET</p>
+        </div>
+      </div>
+      <footer id="footer"></footer>
+  </body>
+  <script>
+    $(function () {
+      $("#header").load("components/header.html");
+      $("#footer").load("components/footer.html");
+    });
+  </script>
+</html>

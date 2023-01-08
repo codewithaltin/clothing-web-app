@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  font-family: "Karla", sans-serif;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#main {
+  width: 92.5%;
+  margin-left: 7.5%;
+}
+#searchbar {
+  margin-top: 5rem;
+  width: 98%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 0.2em 0em;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+#searchbar::placeholder {
+  color: rgb(184, 184, 184);
+}
+
+#trending_product {
+  margin-top: 5em;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+#trending_product > :first-child {
+  color: black;
+  cursor: text;
+  font-size: 1.5em;
+}
+#trending_product > p {
+  cursor: pointer;
+  color: #757575;
+  margin-bottom: 2.1em;
+}

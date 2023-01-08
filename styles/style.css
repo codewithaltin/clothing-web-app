@@ -2,15 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: Karla, "Poppins", sans-serif;
 }
 body {
-  background-image: url("../images/background.jpg");
+  background-image: url("../images/background_2.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
 }
-header a {
-  color: white;
+html {
+  scroll-behavior: smooth;
 }
 video {
   min-width: 100%;
@@ -20,33 +20,45 @@ video {
   position: relative;
   overflow: hidden;
 }
-
 .main {
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  font-size: 6rem;
+}
+.content a {
+  font-size: 9rem;
   font-weight: 700;
   color: rgb(240, 240, 0);
+  text-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.1);
 }
-
+.content a:hover {
+  color: #fff;
+}
+footer .container {
+  margin-top: 10%;
+}
+.content p {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.5);
+}
+header nav {
+  position: fixed;
+}
+.content {
+  text-align: center;
+}
 .product-category {
-  padding: 0 10vw;
+  padding: 0 5vw;
   font-size: 3.5rem;
   font-weight: 700;
   margin-top: 100px;
   margin-bottom: 40px;
   text-transform: capitalize;
 }
-.main .content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-.content div {
-  width: 100px;
-  height: 100px;
-}
+
 .product-container {
   margin-left: -5%;
   padding: 0 10vw;
@@ -152,7 +164,7 @@ video {
   width: 10vw;
   height: 100%;
   position: absolute;
-  margin-top: 33%;
+  margin-top: 5%;
   top: 0;
   display: flex;
   justify-content: center;

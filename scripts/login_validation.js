@@ -1,3 +1,4 @@
+//LOGIN VALIDATION
 const form = document.querySelector("form");
 (eField = form.querySelector(".email")),
   (eInput = eField.querySelector("input")),
@@ -29,7 +30,7 @@ form.onsubmit = (e) => {
       let errorTxt = eField.querySelector(".error-txt");
       eInput.value != ""
         ? (errorTxt.innerText = "Enter a valid email address")
-        : (errorTxt.innerText = "Email can't be blank");
+        : (errorTxt.innerText = "This field is required.");
     } else {
       eField.classList.remove("error");
       eField.classList.add("valid");
@@ -53,3 +54,4 @@ form.onsubmit = (e) => {
     window.location.href = form.getAttribute("action");
   }
 };
+//REGISTER VALIDATI ON

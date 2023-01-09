@@ -24,7 +24,7 @@ nav {
 }
 
 nav .logo {
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: 600;
 }
 .logo a {
@@ -36,23 +36,16 @@ nav ul {
   list-style: none;
 }
 nav ul li {
-  margin: 0 5px;
+  margin: 0 10px;
 }
-
 nav ul li a {
   font-size: 1.3rem;
-  padding: 8px 10px;
-  border-radius: 5px;
-  letter-spacing: 1px;
+}
+nav ul li a:first-child {
+  padding: 0;
 }
 nav ul li:first-child {
   margin-right: 20vh;
-  padding: 0;
-}
-.search {
-  padding: 0;
-}
-.first-child {
   width: 100px;
   border-bottom: 1px solid black;
 }
@@ -66,7 +59,7 @@ input[type="checkbox"] {
   display: none;
 }
 
-@media (max-width: 844px) {
+@media (max-width: 1000px) {
   nav .menu-btn i {
     color: black;
     display: block;

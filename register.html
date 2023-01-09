@@ -7,6 +7,9 @@
     <title>Registration - ALTINIUM Offical Website</title>
     <link rel="stylesheet" href="styles//register.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    <script src="scripts/reg_validaton.js"></script>
   </head>
   <body>
     <div id="header"></div>
@@ -16,31 +19,24 @@
         <form id="form" action="#">
           <div class="input-control">
             <input id="email" name="email" type="email" placeholder="E-MAIL" />
-            <div class="error"></div>
           </div>
-          <br />
           <div class="input-control">
-            <input id="password" type="password" placeholder="PASSWORD" />
+            <input id="password" type="password" name ='password' placeholder="PASSWORD" />
             <input
-              id="reapeatpassword"
+              id="repeatpassword"
               type="password"
+              name="repeatpassword"
               placeholder="REPEAT PASSWORD"
             />
-            <div class="error"></div>
+            <input id="first-name" type="text" name="firstname" placeholder="FIRST NAME" />
+          <input id="last-name" type="text"  name="lastname" placeholder="LAST NAME" />
           </div>
           <br />
-          <input id="first-name" type="text" placeholder="FIRST NAME" />
-          <input id="last-name" type="text" placeholder="LAST NAME" />
-          <div id="checklast">
-            <div id="fb">
-              <input id="checkmark" type="checkbox" />I WISH TO RECEIVE ALTINIUM
-              NEWS ON MY E-MAIL
-            </div>
-            <div id="fb">
-              <input id="checkmark1" type="checkbox" /> I ACCEPT THE PRIVACY
-              STATEMENT
-            </div>
-          </div>
+           <div id="checklast">
+              <input id="checkbox" name ="email" type="checkbox" />I WISH TO RECEIVE ALTINIUM
+              NEWS ON MY E-MAIL<br>
+            <input id="checkbox" id="checkmark1" type="checkbox" /> I ACCEPT THE PRIVACY
+              STATEMENT          </div>
           <div id="bttn">
             <button type="submit">CREATE ACCOUNT</button>
           </div>

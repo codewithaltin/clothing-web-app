@@ -21,10 +21,12 @@ html {
   border-color: #ff3860;
 }
 
-.input-control .error {
+.input-control label {
   color: #ff3860;
   font-size: 9px;
   height: 13px;
+  display: block;
+  margin-top: 5px;
 }
 #checklast {
   font-size: 10px;
@@ -54,7 +56,7 @@ h3 {
   height: 10px;
 }
 
-#reapeatpassword {
+#repeatpassword {
   width: 45%;
   height: 10px;
   margin-top: 10px;
@@ -82,11 +84,15 @@ h3 {
   background-color: black;
   color: white;
   margin-top: 25px;
+  cursor: pointer;
 }
 #fb {
   margin-top: 20px;
 }
-
+#checkbox {
+  display: inline;
+  margin: 0;
+}
 @media only screen and (min-width: 375px) and (max-width: 768px) {
   #logpage {
     width: 100%;

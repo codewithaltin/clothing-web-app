@@ -26,23 +26,25 @@ video {
   align-items: center;
   height: 100vh;
 }
-.content a {
+h1 a {
+  width: 10ch;
   font-size: 9rem;
   font-weight: 700;
-  color: rgb(240, 240, 0);
-  text-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.1);
+  text-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+  color: rgb(234, 255, 0);
 }
-.content a:hover {
+h1 a:hover {
   color: #fff;
+  transition: 0.5s;
 }
 footer .container {
   margin-top: 10%;
 }
 .content p {
-  color: white;
   font-size: 1.5rem;
   font-weight: 500;
-  text-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 1);
+  color: #fff;
 }
 header nav {
   position: fixed;
@@ -50,6 +52,58 @@ header nav {
 .content {
   text-align: center;
 }
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0 50px 100px;
+  font-size: 7rem;
+}
+.wrapper .static-txt {
+  color: rgb(8, 0, 0);
+  font-weight: 700;
+}
+.wrapper .dynamic-txts {
+  margin-left: 15px;
+  height: 100px;
+  overflow: hidden;
+}
+.dynamic-txts li {
+  list-style: none;
+  color: rgb(235, 255, 0);
+  font-weight: 600;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100% {
+    top: -410px;
+  }
+}
+.dynamic-txts li span {
+  position: relative;
+  margin: 5px 0;
+}
+.dynamic-txts li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  border-left: 2px solid #000000;
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%,
+  60% {
+    left: calc(100% + 30px);
+  }
+  100% {
+    left: 0;
+  }
+}
+
 .product-category {
   padding: 0 5vw;
   font-size: 3.5rem;
@@ -164,7 +218,6 @@ header nav {
   width: 10vw;
   height: 100%;
   position: absolute;
-  margin-top: 5%;
   top: 0;
   display: flex;
   justify-content: center;
@@ -224,10 +277,4 @@ header nav {
 .collection:nth-child(3) {
   grid-column: span 2;
   margin-bottom: 10px;
-}
-@media only screen and (min-width: 0px) and (max-width: 844px) {
-  video {
-    content: hidden;
-    margin: 0;
-  }
 }

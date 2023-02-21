@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+:root {
+  --primary-font: "Poppins", sans-serif, Times;
+  --logo-font: "OPTIBodoni-Antiqua", Times, serif;
+  --black-color: #000;
+  --dark-color: rgb(50, 50, 50);
+  --lighter-color: rgb(210, 210, 210);
+  --white-color: #fff;
+}
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--primary-font);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -29,7 +37,7 @@ nav .logo {
   font-weight: 600;
 }
 .logo a {
-  font-family: "OPTIBodoni-Antiqua", Times, serif;
+  font-family: var(--logo-font);
 }
 nav ul {
   display: flex;

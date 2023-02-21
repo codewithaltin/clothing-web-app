@@ -5,12 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LOG IN / CREATE ACCOUNT - ALTINIUM Offical Website</title>
-    <link rel="stylesheet" href="./styles/login.css" />
-    <link rel="stylesheet" href="scripts/validation.js" />
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  </head>
+    <link rel="stylesheet" href="./style/style.css">  </head>
   <body>
-    <header id="header"></header>
+  <header id="header"><?php include 'header.php'?></header>
     <div id="logindiv">
       <div id="log">
         <section>
@@ -19,7 +16,7 @@
             <div class="field email">
               <input
                 type="text"
-                class="inputEmail"
+                class="input"
                 placeholder="Email Address"
               />
               <div class="error error-txt size6">Email can't be blank</div>
@@ -28,7 +25,7 @@
             <div class="field password">
               <input
                 type="password"
-                class="inputPasswd"
+                class="input"
                 placeholder="Password"
               />
               <div class="error error-txt size6">Password can't be blank</div>
@@ -60,19 +57,14 @@
           </div>
           <div class="bttn">
             <button class="">
-              <a href="register.html"> CREATE ACCOUNT</a>
+              <a href="register.php"> CREATE ACCOUNT</a>
             </button>
           </div>
         </section>
       </div>
     </div>
-    <footer id="footer"></footer>
+    <footer id="footer"><?php include 'footer.php'?></footer>
     <script src="scripts/login_validation.js"></script>
   </body>
-  <script>
-    $(function () {
-      $("#header").load("header.html");
-      $("#footer").load("footer.html");
-    });
-  </script>
+
 </html>

@@ -2,15 +2,11 @@
   <head>
     <meta charset="utf-8" />
     <title>ALTINIUM Offical Website</title>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <link rel="stylesheet" href="./styles/header.css" />
-    <link rel="stylesheet" href="./styles/footer.css" />
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./style/style.css">
     <script src="/scripts/script.js" defer></script>
-    <link rel="stylesheet" href="./styles/index.css" />
   </head>
   <body>
-    <header id="header"></header>
+  <header id="header"><?php include 'header.php'?></header>
     <div class="main">
       <img src="images/background_2.jpg" alt="">
       <div class="content">
@@ -190,13 +186,7 @@
       </div>
     </section>
     <script src="scripts/script.js"></script>
-    <footer id="footer"></footer>
+    <footer id="footer"><?php include 'footer.php'?></footer>
   </body>
-  <script>
-    $(function () {
-      $("#header").load("header.html");
-      $("#footer").load("footer.html");
-    });
-  </script>
   <script src="./scripts/index.js"></script>
 </html>

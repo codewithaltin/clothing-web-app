@@ -2,15 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/search.css"/>
+    <link rel="stylesheet" href="./style/style.css">
     <title>Search engine | ALTINIUM
     </title>
   </head>
   <body>
-    <header id="header"></header>
+    <header id="header"><?php include 'header.php'?></header>
     <div id="container">
       <div id="main">
         <input
@@ -27,12 +26,6 @@
           <p >WOMEN JACKET</p>
         </div>
       </div>
-      <footer id="footer"></footer>
+      <footer id="footer"><?php include 'footer.php'?></footer>
   </body>
-  <script>
-    $(function () {
-      $("#header").load("header.html");
-      $("#footer").load("footer.html");
-    });
-  </script>
 </html>

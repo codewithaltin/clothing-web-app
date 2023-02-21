@@ -1,7 +1,7 @@
-<div class="container">
+<div class="footerContainer">
   <hr id="line">
   <div class="options">
-    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./style/style.css">
       <div class="footer-opt">
         <h5>HELP</h5>
         <ul>
@@ -52,7 +52,7 @@
      <div id="div2">
         <p>BY ALTIN MORINA, PRISTINE</p>
         <br/>
-        <p id="reserved"> &COPY ALL RIGHTS RESERVED</p>
+        <p > &COPY ALL RIGHTS RESERVED</p>
         <br><br><br><br><br><br>
      </div>
  </div>

@@ -1,5 +1,6 @@
 <?php
-require_once (__DIR__ .'/../libs/BaseModel.php');
+
+include_once (__DIR__ .'/../libs/BaseModel.php');
 
 class User extends BaseModel{
     
@@ -19,6 +20,7 @@ class User extends BaseModel{
         $this->roli=isset($user['roli'])?$user['roli']:null;
         $this->id_dyqani=isset($user['id_dyqani'])?$user['id_dyqani']:null;
     }
+
     public function getId(){
         return $this->id;
     }
@@ -56,4 +58,80 @@ class User extends BaseModel{
         }
     }
     
+    public function delete(){
+
+        $rezultati=$this->db->delete("perdoruesit","id={$this->id}");
+        return $rezultati;
+    }
+
+    public static function getById(int $id){
+        $sql="SELECT * FROM perdoruesit WHERE id= :id";
+
+        $db=new Database();
+
+        $listt=$db->select($sql,[":id"=>$id]);
+
+        if(count($listt)){
+
+            $perdorues=new User();
+            $perdorues->id=$listt[0]["id"];
+            $perdorues->emri=$listt[0]["emri"];
+            $perdorues->email=$listt[0]["email"];
+            $perdorues->password=$listt[0]["password"];
+            $perdorues->roli=$listt[0]["roli"];
+            $perdorues->id_dyqani=$listt[0]["id_dyqani"];
+
+            return $perdorues;
+        }else{
+            return null;
+        }
+    }
+    
+    public static function getList(string $condition="1"){
+        $sql="SELECT * FROM perdoruesit WHERE $condition";
+
+        $db=new Database();
+
+        $lista=$db->select($sql);
+
+        $users=[];
+
+        if(count($lista)){
+
+            foreach($lista as $listaUs){
+
+                $user=new User();
+                $user->id=$listaUs["id"];
+                $user->emri=$listaUs["emri"];
+                $user->email=$listaUs["email"];
+                $user->password=$listaUs["password"];
+                $user->roli=$listaUs["roli"];
+                $user->id_dyqani=$listaUs["id_dyqani"];
+
+                array_push($users,$user);
+            }
+
+            return $users;
+        }else{
+            return array();
+        }
+    }
+    public function toArray(){
+        $user=[];
+        $user["id"]=$this->id;
+        $user["emri"]=$this->emri;
+        $user["email"]=$this->email;
+        $user["password"]=$this->password;
+        $user["roli"]=$this->roli;
+        $user["id_dyqani"]=$this->id_dyqani;
+
+        return $user;
+    }
+
+    public function isAdmin(){
+        if($this->roli==0){
+            return true;
+        }
+        return false;
+    }
 }

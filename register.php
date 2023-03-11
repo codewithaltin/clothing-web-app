@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration - ALTINIUM Offical Website</title>
-    <link rel="stylesheet" href="./style/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
-    <script src="scripts/reg_validaton.js"></script>
-  </head>
+
   <body>
   <header id="header"><?php include 'header.php'?></header>
     <div id="regpage">
@@ -43,6 +32,5 @@
     </form>
     </div>
     <footer id="footer"><?php include 'footer.php'?></footer>
-  </body>
- 
-</html>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+<script src="script/reg_validation.js"></script>

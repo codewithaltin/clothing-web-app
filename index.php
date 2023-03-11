@@ -1,11 +1,3 @@
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>ALTINIUM Offical Website</title>
-    <link rel="stylesheet" href="./style/style.css"> 
-    <script src="scripts/script.js" defer></script>
-  </head>
-  <body>
   <header id="header"><?php include 'header.php'?></header>
     <div class="main">
       <img src="images/background_2.jpg" alt="">
@@ -186,5 +178,3 @@
       </div>
     </section>
     <footer id="footer"><?php include 'footer.php'?></footer>
-  </body>
-</html>

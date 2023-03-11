@@ -1,5 +1,5 @@
 <?php
-  require_once "config.php";
+  include_once "config.php";
 
    if(isset($_POST['login'])){
        $error_msg=null;
@@ -19,12 +19,13 @@
            }
        }
   }
+  ?>
   <header id="header"><?php include 'header.php'?></header>
     <div id="logindiv">
       <div id="log">
         <section>
           <h3>LOG IN</h3>
-          <form>
+          <form method='POST'>
             <div class="field email">
               <input
                 type="text"
@@ -44,7 +45,7 @@
             </div>
             <p class="size6 pointer">HAVE YOU FORGOTTEN YOUR PASSWORD?</p>
             <div class="bttn">
-              <button type="submit">LOG IN</button>
+              <input type="submit" class='button'>LOG IN</button>
             </div>
           </form>
         </section>
@@ -77,5 +78,3 @@
     </div>
     <footer id="footer"><?php include 'footer.php'?></footer>
     <script src="script/validation.js"></script>
-
->?

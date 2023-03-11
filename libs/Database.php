@@ -50,4 +50,7 @@ class Database{
 
         return $stmt->fetchAll($fetchMode);
     }
+    public function delete(string $table,string $where,int $limit=1){
+        return $this->connection->exec("DELETE FROM $table WHERE $where LIMIT $limit");
+    }
 }

@@ -1,15 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LOG IN / CREATE ACCOUNT - ALTINIUM Offical Website</title>
-    <link rel="stylesheet" href="./style/style.css" />
-    <link rel="stylesheet" href="scripts/validation.js" />
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  </head>
-  <body>
+  <?php
+  require_once "config.php";
+  require_once "libs/AuthenticateUser.php";
+
+   if(isset($_POST['login'])){
+       $error_msg=null;
+       $email=$_POST['email'];
+       $password=$_POST['password'];
+       if ($email == '' || $password == '') {
+       $error_msg = "Te dhenat duhet plotesohen ";
+       }else{
+           $user=AuthenticateUser::authenticate($email,md5($password));
+           if($user !== false){
+                   AuthenticateUser::save($user->toArray());
+                   $error_msg="Te dhenat e sakta";
+                       header('Location: /admin/dashboard.php');
+                   exit();
+           }else{
+               $error_msg="Te dhenat e gabuara!";
+           }
+       }
+  }
   <header id="header"><?php include 'header.php'?></header>
     <div id="logindiv">
       <div id="log">
@@ -67,6 +77,6 @@
       </div>
     </div>
     <footer id="footer"><?php include 'footer.php'?></footer>
-    <script src="scripts/login_validation.js"></script>
-  </body>
-</html>
+    <script src="script/validation.js"></script>
+
+>?

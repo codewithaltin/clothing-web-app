@@ -1,3 +1,4 @@
+  
 <div class="footerContainer">
   <hr id="line">
   <div class="options">

@@ -26,10 +26,8 @@ class Article {
     }
     public function save(){
         if(is_null($this->id)){
-
             $new_id =$this->db->insert("artikujt",[
-
-                "titulli"=>$this->titulli,
+               "titulli"=>$this->titulli,
                 "cmimi"=>$this->cmimi,
                 "data"=>$this->data,
                 "id_dyqani"=>$this->id_dyqani,
@@ -74,11 +72,8 @@ class Article {
     }
     public static function getList(string $condition="1"){
         $sql="SELECT * FROM artikujt WHERE $condition";
-
         $db=new Database();
-
         $dattaa=$db->select($sql);
-
         $artikujt=[];
 
         if(count($dattaa)){

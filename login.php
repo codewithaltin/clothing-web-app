@@ -1,4 +1,24 @@
+<?php
+  require_once "config.php";
 
+   if(isset($_POST['login'])){
+       $error_msg=null;
+       $email=$_POST['email'];
+       $password=$_POST['password'];
+       if ($email == '' || $password == '') {
+       $error_msg = "Te dhenat duhet plotesohen ";
+       }else{
+           $user=AuthenticateUser::authenticate($email,md5($password));
+           if($user !== false){
+                   AuthenticateUser::save($user->toArray());
+                   $error_msg="Te dhenat e sakta";
+                       header('Location: /admin/dashboard.php');
+                   exit();
+           }else{
+               $error_msg="Te dhenat e gabuara!";
+           }
+       }
+  }
   <header id="header"><?php include 'header.php'?></header>
     <div id="logindiv">
       <div id="log">

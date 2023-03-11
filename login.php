@@ -1,16 +1,28 @@
 <?php
- require_once "config.php";
- require_once "libs/AuthenticateUser.php";
+   require_once "config.php";
+   require_once "libs/AuthenticateUser.php";
 
-   if(isset($_POST['login'])){
-        $user=AuthenticateUser::authenticate($email,md5($password));
-        if($user !== false){
-                AuthenticateUser::save($user->toArray());
-                header("Location:index.php");
-                exit();
+    if(isset($_POST['login'])){
+        $error_msg=null;
+        $email=$_POST['email'];
+        $password=$_POST['password'];
+        if ($email == '' || $password == '') {
+        $error_msg = "Te dhenat duhet plotesohen ";
+        }else{
+            $user=AuthenticateUser::authenticate($email,md5($password));
+            if($user !== false){
+                    AuthenticateUser::save($user->toArray());
+                    $error_msg="Te dhenat e sakta";
+                        header('Location: index.php');
+                    exit();
+            }else{
+                $error_msg="Te dhenat e gabuara!";
+            }
         }
-    }
-  ?>
+   }
+   $artikujt=Article::getList("1 LIMIT 10");
+
+?>
   <header id="header"><?php include 'header.php'?></header>
     <div id="logindiv">
       <div id="log">

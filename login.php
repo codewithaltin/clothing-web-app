@@ -45,7 +45,7 @@
             </div>
             <p class="size6 pointer">HAVE YOU FORGOTTEN YOUR PASSWORD?</p>
             <div class="bttn">
-              <input type="submit" class='button'>LOG IN</button>
+              <button type="submit" class='button'>LOG IN</button>
             </div>
           </form>
         </section>

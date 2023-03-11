@@ -8,7 +8,7 @@ class Database{
         $host="127.0.0.1";
         $user="root";
         $password="";
-        $db_name="sneakershop";
+        $db_name="altinium";
 
         try{
             $this->connection=new PDO("mysql:host=$host;dbname=$db_name",$user,$password);

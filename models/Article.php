@@ -55,14 +55,10 @@ class Article {
         return $rezultati;
     }
     public static function getById(int $id){
-
         $sql="SELECT * FROM artikujt WHERE id= :id";
-
         $db=new Database();
-
         $datta=$db->select($sql,[":id"=>$id]);
-
-        if(count($datta)){
+          if(count($datta)){
             $article=new Article();
             $article->id = $datta[0]["id"];
             $article->titulli=$datta[0]["titulli"];

@@ -19,4 +19,41 @@ class User extends BaseModel{
         $this->roli=isset($user['roli'])?$user['roli']:null;
         $this->id_dyqani=isset($user['id_dyqani'])?$user['id_dyqani']:null;
     }
+    public function getId(){
+        return $this->id;
+    }
+
+    public function setId($id){
+        $this->id=$id;
+    }
+
+    public function save(){
+        if(is_null($this->id)){
+
+            $new_id=$this->db->insert("perdoruesit",[
+
+                "emri"=>$this->emri,
+                "email"=>$this->email,
+                "password"=>$this->password,
+                "roli"=>$this->roli,
+                "id_dyqani"=>$this->id_dyqani
+            ]);
+
+            return $new_id;
+        }else{
+
+            $new_id=$this->db->update("perdoruesit",[
+
+                "emri"=>$this->emri,
+                "email"=>$this->email,
+                "password"=>$this->password,
+                "roli"=>$this->roli,
+                "id_dyqani"=>$this->id_dyqani
+
+            ], "id = {$this->id}");
+
+            return $rezultati;
+        }
+    }
+    
 }

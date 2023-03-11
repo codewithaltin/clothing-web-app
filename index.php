@@ -14,7 +14,7 @@
         />
       </video>
       <div class="wrapper" id="wrapper">
-        <div class="static-txt">50% OFF FOR </div>
+        <div class="static-txt">50% OFF FOR</div>
         <ul class="dynamic-txts">
           <li><span>MEN</span></li>
           <li><span>WOMEN</span></li>

@@ -30,6 +30,23 @@ class AuthenticateUser{
             return false;
         }
     }
-    
+    public static function save(Array $user){
+        Session::set("user_auth",$user);
+    }
+
+    public static function is_logged(){
+        if(is_null(self::get())){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    public static function logout(){
+        Session::clear("user_auth");
+    }
+    public static function get(){
+        return Session::get("user_auth");
+    }
  
 }

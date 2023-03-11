@@ -1,12 +1,10 @@
 <?php
-
-
-include_once (__DIR__ .'/../libs/BaseModel.php');
+require_once (__DIR__ .'/../libs/BaseModel.php');
 
 class User extends BaseModel{
     
     private $id;
-    public $emri;s
+    public $emri;
     public $email;
     public $password;
     public $roli=1;

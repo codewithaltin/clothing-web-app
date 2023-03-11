@@ -19,4 +19,23 @@ class Database{
             exit;
         }
     }
+    public function insert(string $table,array $field_values){
+        $fushat=implode(',',array_keys($field_values));
+
+        $parametrat=':'.implode(', :',array_keys($field_values));
+        $stmt=$this->connection->prepare("INSERT INTO $table ($fushat) VALUES ($parametrat);");
+
+        foreach($field_values as $key => $value){
+            $stmt->bindValue(":$key",$value);
+        }
+
+        $rezultati=$stmt->execute();
+
+        if($rezultati){
+            return $this->connection->lastInsertId();
+        }else{
+            $error=$stmt->errorInfo();
+            return $error;
+        }
+    }
 }

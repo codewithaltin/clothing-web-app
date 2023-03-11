@@ -12,7 +12,7 @@
            if($user !== false){
                    AuthenticateUser::save($user->toArray());
                    $error_msg="Te dhenat e sakta";
-                       header('Location: /admin/dashboard.php');
+                       header('Location: index.php');
                    exit();
            }else{
                $error_msg="Te dhenat e gabuara!";

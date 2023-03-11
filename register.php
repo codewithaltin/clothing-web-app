@@ -13,11 +13,14 @@
     if($email==""){
         $error_msg="Email eshte e detyruesheme";
     }else if ($password=="" || $repeatpassword == ""){
-        $error_msg="Password eshte i detyrueshem";
+        $error_msg="Password is required";
+    }
+    else if($password != $repeatpassword){
+        $error_msg ="Passwords must match.";
     }
     else if ($firstName == '' || $lastName == '' ){
-      $error_msg = "Emri dhe mbiemri eshte i detyrueshem";
-        }
+      $error_msg = "Emri dhe mbiemri is required.";
+      }
     if(is_null($error_msg)){
         $user=new User();
         $user->emri=$firstName;
@@ -26,7 +29,8 @@
         $user->roli=1;
         $user->id_dyqani=1;
         $user->save();
-        header("Location: index.php");
+        $_SESSION['name'] = $firstName;
+        header("Location:index.php");
         exit;
     }
   }

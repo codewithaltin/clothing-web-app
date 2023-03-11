@@ -38,7 +38,6 @@ class Database{
             return $error;
         }
     }
-    
     public function select(string $sql,array $bindArray=array(),$fetchMode=PDO::FETCH_ASSOC){
         $stmt=$this->connection->prepare($sql);
 

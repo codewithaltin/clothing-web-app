@@ -23,9 +23,13 @@
   </label>
   <ul>
     <li><a href="search.php">SEARCH</a></li>
+    <?php if (AuthenticateUser::is_logged()) { ?>
+            <li><a href="login.php"><?php echo $_SESSION['name']; ?></a></li>
+    <?php else:?>
     <li><a href="login.php">LOG IN</a></li>
     <li><a href="register.php">REGISTER</a></li>
     <li>
+    <?php endif;?>
       <img
         src="https://i.postimg.cc/q7R4p81H/wishlist-icon.png"
         width="15px"

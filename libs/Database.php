@@ -53,4 +53,27 @@ class Database{
     public function delete(string $table,string $where,int $limit=1){
         return $this->connection->exec("DELETE FROM $table WHERE $where LIMIT $limit");
     }
+    public function update(string $table,array $field_values,string $where){
+        $vlerat=null;
+
+        foreach($field_values as $key=>$value){
+            $vlerat .="$key = :$key,";
+        }
+
+        $vlerat=rtrim($vlerat,',');
+
+        $stmt=$this->connection->prepare("Update $table SET $vlerat WHERE $where");
+
+        foreach($vlerat as $key=>$value){
+            $stmt->bindValue(":$key",$value);
+        }
+
+        $rezultati=$stmt->execute();
+
+        if($rezultati){
+            return $rezultati;
+        }else{
+            return $stmt->errorInfo();
+        }
+    }
 }

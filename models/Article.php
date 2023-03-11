@@ -9,6 +9,8 @@ class Article {
     public $data;
     public $foto;
     public $id_dyqani;
+    public $priceoff;
+    public $oldprice;
 
 
     function __construct(array $article =[]){
@@ -19,6 +21,8 @@ class Article {
         $this->id_dyqani=isset($article['id_dyqani']) ? $article['id_dyqani'] : null;
         $this->pershkrimi=isset($article['pershkrimi']) ? $article['pershkrimi'] : null;
         $this->foto=isset($article['foto']) ? $article['foto'] : null;
+        $this->priceoff=isset($article['priceoff']) ? $article['priceoff'] : null;
+        $this->oldprice=isset($article['olderprice']) ? $article['olderprice'] : null;
 
     }
     public function getId(){
@@ -32,7 +36,9 @@ class Article {
                 "data"=>$this->data,
                 "id_dyqani"=>$this->id_dyqani,
                 "pershkrimi"=>$this->pershkrimi,
-                "foto"=>$this->foto
+                "foto"=>$this->foto,
+                "priceoff"=>$this->priceoff,
+                "olderprice"=>$this->olderprice
             ]);
 
             return $new_id;
@@ -43,7 +49,9 @@ class Article {
                 "data"=>$this->data,
                 "id_dyqani"=>$this->id_dyqani,
                 "pershkrimi"=>$this->pershkrimi,
-                "foto"=>$this->foto
+                "foto"=>$this->foto,
+                "priceoff"=>$this->priceoff,
+                "olderprice"=>$this->olderprice
             ],"id={$this->id}");
             return $rezultati;
         }
@@ -65,6 +73,8 @@ class Article {
             $article->id_dyqani=$datta[0]["id_dyqani"];
             $article->pershkrimi=$datta[0]["pershkrimi"];
             $article->foto=$datta[0]["foto"];
+            $article->priceoff=$datta[0]["priceoff"];
+            $article->olderprice=$datta[0]["olderprice"];
             return $article;
         }else{
             return null;
@@ -87,6 +97,8 @@ class Article {
                 $article->id_dyqani=$data["id_dyqani"];
                 $article->pershkrimi=$data["pershkrimi"];
                 $article->foto=$data["foto"];
+                $article->priceoff=$data["priceoff"];
+                $article->olderprice=$data["olderprice"];
 
                 array_push($artikujt,$article);
             }

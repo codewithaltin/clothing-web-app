@@ -29,7 +29,6 @@
         $user->roli=1;
         $user->id_dyqani=1;
         $user->save();
-        $_SESSION['name'] = $firstName;
         header("Location:index.php");
         exit;
     }
@@ -39,7 +38,7 @@
 <div id="regpage">
   <h3>PERSONAL DETAILS</h3>
   <div id="fill">
-  <form id="form" action="#" method ="POST">
+  <form id="form"  method ="POST">
       <div class="input-control">
         <input  class='input' id="email" name="email" type="email" placeholder="E-MAIL" />
       </div>

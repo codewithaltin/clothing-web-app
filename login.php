@@ -1,33 +1,25 @@
 <?php
-  include_once "config.php";
+ require_once "config.php";
+ require_once "libs/AuthenticateUser.php";
 
    if(isset($_POST['login'])){
-       $error_msg=null;
-       $email=$_POST['email'];
-       $password=$_POST['password'];
-       if ($email == '' || $password == '') {
-       $error_msg = "Te dhenat duhet plotesohen ";
-       }else{
-           $user=AuthenticateUser::authenticate($email,md5($password));
-           if($user !== false){
-                   AuthenticateUser::save($user->toArray());
-                   $error_msg="Te dhenat e sakta";
-                       header('Location: index.php');
-                   exit();
-           }else{
-               $error_msg="Te dhenat e gabuara!";
-           }
-       }
-  }
+        $user=AuthenticateUser::authenticate($email,md5($password));
+        if($user !== false){
+                AuthenticateUser::save($user->toArray());
+                header("Location:index.php");
+                exit();
+        }
+    }
   ?>
   <header id="header"><?php include 'header.php'?></header>
     <div id="logindiv">
       <div id="log">
         <section>
           <h3>LOG IN</h3>
-          <form method='POST'>
+          <form id="form"  method ="POST">
             <div class="field email">
               <input
+                name='email'
                 type="text"
                 class="inputEmail input"
                 placeholder="Email Address"
@@ -37,6 +29,7 @@
             <br />
             <div class="field password">
               <input
+                name='password'
                 type="password"
                 class="inputPasswd input"
                 placeholder="Password"
@@ -45,7 +38,7 @@
             </div>
             <p class="size6 pointer">HAVE YOU FORGOTTEN YOUR PASSWORD?</p>
             <div class="bttn">
-              <button type="submit" class='button'>LOG IN</button>
+              <button type="submit" class='button' name ='login'>LOG IN</button>
             </div>
           </form>
         </section>

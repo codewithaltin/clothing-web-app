@@ -2,10 +2,13 @@
 :root {
   --primary-font: "Poppins", sans-serif, Times;
   --logo-font: "OPTIBodoni-Antiqua", Times, serif;
-  --black-color: #000;
-  --dark-color: rgb(50, 50, 50);
+  --primary-dark-color: #000;
+  --darker-color: rgb(50, 50, 50);
+  --hot-offers-color: rgb(234, 255, 0);
   --lighter-color: rgb(210, 210, 210);
-  --white-color: #fff;
+  --primary-white-color: #fff;
+  --default-font-size: 62.5%;
+  --hovered-color: rgb(46, 46, 46);
 }
 * {
   font-family: var(--primary-font);
@@ -14,12 +17,12 @@
   padding: 0;
 }
 html {
-  font-size: 62.5%;
+  font-size: var(--default-font-size);
   scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
-  color: #000;
+  color: var(--primary-dark-color);
 }
 
 nav {
@@ -30,7 +33,7 @@ nav {
   justify-content: space-between;
   padding: 0 30px 0 30px;
   flex-wrap: wrap;
-  z-index: 10;
+  z-index: 5;
 }
 nav .logo {
   font-size: 5rem;
@@ -62,7 +65,7 @@ nav ul li:first-child {
   border-bottom: 1px solid black;
 }
 nav .menu-btn i {
-  color: #000;
+  color: var(--primary-dark-color);
   font-size: 22px;
   cursor: pointer;
   display: none;
@@ -98,10 +101,10 @@ h1 a {
   font-size: 9rem;
   font-weight: 700;
   text-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
-  color: rgb(234, 255, 0);
+  color: var(--hot-offers-color);
 }
 h1 a:hover {
-  color: #fff;
+  color: var(--primary-white-color);
   transition: 0.5s;
 }
 footer .container {
@@ -114,7 +117,7 @@ footer .container {
   font-size: 1.5rem;
   font-weight: 500;
   text-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 1);
-  color: #fff;
+  color: var(--primary-white-color);
 }
 header nav {
   position: fixed;
@@ -131,16 +134,16 @@ header nav {
   font-weight: 700;
 }
 .wrapper .static-txt {
-  color: rgb(8, 0, 0);
+  color: var(--primary-dark-color);
 }
 .wrapper .dynamic-txts {
   margin-left: 15px;
   height: 100px;
   overflow: hidden;
+  color: var(--hot-offers-color);
 }
 .dynamic-txts li {
   list-style: none;
-  color: rgb(235, 255, 0);
   font-weight: 600;
   position: relative;
   top: 0;
@@ -161,8 +164,8 @@ header nav {
   left: 0;
   height: 100%;
   width: 100%;
-  background: #ffffff;
-  border-left: 2px solid #000000;
+  background: var(--primary-white-color);
+  border-left: 2px solid var(--primary-dark-color);
   animation: typing 3s steps(10) infinite;
 }
 @keyframes typing {
@@ -218,7 +221,7 @@ header nav {
 
 .discount-tag {
   position: absolute;
-  background: #fff;
+  background: var(--primary-white-color);
   padding: 5px;
   border-radius: 5px;
   right: 10px;
@@ -236,8 +239,8 @@ header nav {
   text-transform: capitalize;
   border: none;
   outline: none;
-  background: #000;
-  color: #fff;
+  background: var(--primary-dark-color);
+  color: var(--primary-white-color);
   transition: 0.2s;
   cursor: pointer;
   opacity: 0;
@@ -248,7 +251,7 @@ header nav {
 }
 
 .card-btn:hover {
-  background: rgb(227, 227, 227);
+  background: var(--primary-white-color);
   color: #000;
 }
 
@@ -340,7 +343,7 @@ header nav {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #fff;
+  color: var(--primary-white-color);
   font-size: 50px;
   text-transform: capitalize;
 }
@@ -375,7 +378,7 @@ h5 {
 .footer-opt ul li a {
   font-size: 0.9rem;
   text-transform: capitalize;
-  color: black;
+  color: var(--primary-dark-color);
   text-decoration: none;
   display: block;
   transition: all 0.3s ease;
@@ -434,27 +437,28 @@ h3 {
 .bttn {
   margin-top: 50px;
 }
+
 .bttn button {
   width: 19em;
   height: 2.7em;
-  background-color: black;
-  color: white;
+  background-color: var(--primary-dark-color);
+  color: var(--primary-white-color);
   cursor: pointer;
   outline: none;
   border: none;
+  margin-top: 5px;
 }
-
 .bttn button:hover {
-  background-color: rgb(46, 46, 46);
+  background-color: var(--hovered-color);
 }
 button a {
   font-size: x-small;
-  color: white;
+  color: var(--primary-white-color);
 }
 .input {
   outline: none;
   border: 0;
-  border-bottom: 0.01px solid gray;
+  border-bottom: 0.01px solid var(--hovered-color);
   margin: 20px 20px 0 0;
   height: 30px;
   width: 40%;
@@ -499,13 +503,13 @@ form .field .error-txt {
 form .field .error {
   display: none;
 }
+form .field.shake .error,
 form .field.error .error {
   display: block;
 }
 #logindiv .input {
   width: 100%;
 }
-
 #main {
   width: 92.5%;
   margin-left: 7.5%;
@@ -570,7 +574,7 @@ form .field.error .error {
     width: 100%;
     margin-left: -100%;
     display: block;
-    color: #fff;
+    color: var(--primary-white-color);
     font-size: 1.5rem;
     transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
@@ -596,13 +600,6 @@ form .field.error .error {
   }
   #log {
     margin: 0 30% 0 10%;
-  }
-  .bttn button {
-    width: 10em;
-    height: 3em;
-    background-color: black;
-    color: white;
-    margin-top: 5px;
   }
   .bttn {
     margin-top: 70px;
@@ -633,4 +630,3 @@ form .field.error .error {
     border: 0.01px solid red;
   }
 }
-/*MAINPAGEEEE*/

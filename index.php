@@ -2,8 +2,8 @@
   <head>
     <meta charset="utf-8" />
     <title>ALTINIUM Offical Website</title>
-    <link rel="stylesheet" href="./style/style.css">
-    <script src="/scripts/script.js" defer></script>
+    <link rel="stylesheet" href="./style/style.css"> 
+    <script src="scripts/script.js" defer></script>
   </head>
   <body>
   <header id="header"><?php include 'header.php'?></header>
@@ -185,8 +185,6 @@
         </div>
       </div>
     </section>
-    <script src="scripts/script.js"></script>
     <footer id="footer"><?php include 'footer.php'?></footer>
   </body>
-  <script src="./scripts/index.js"></script>
 </html>

@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LOG IN / CREATE ACCOUNT - ALTINIUM Offical Website</title>
-    <link rel="stylesheet" href="./style/style.css">  </head>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="scripts/validation.js" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  </head>
   <body>
   <header id="header"><?php include 'header.php'?></header>
     <div id="logindiv">
@@ -16,7 +19,7 @@
             <div class="field email">
               <input
                 type="text"
-                class="input"
+                class="inputEmail input"
                 placeholder="Email Address"
               />
               <div class="error error-txt size6">Email can't be blank</div>
@@ -25,7 +28,7 @@
             <div class="field password">
               <input
                 type="password"
-                class="input"
+                class="inputPasswd input"
                 placeholder="Password"
               />
               <div class="error error-txt size6">Password can't be blank</div>
@@ -66,5 +69,4 @@
     <footer id="footer"><?php include 'footer.php'?></footer>
     <script src="scripts/login_validation.js"></script>
   </body>
-
 </html>

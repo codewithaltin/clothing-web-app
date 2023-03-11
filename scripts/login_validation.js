@@ -7,8 +7,13 @@ const form = document.querySelector("form");
 
 form.onsubmit = (e) => {
   e.preventDefault();
-  eInput.value == "" ? eField.classList.add("error") : checkEmail();
-  pInput.value == "" ? pField.classList.add("shake") : checkPass();
+  eInput.value == "" ? eField.classList.add("shake", "error") : checkEmail();
+  pInput.value == "" ? pField.classList.add("shake", "error") : checkPass();
+
+  setTimeout(() => {
+    eField.classList.remove("shake");
+    pField.classList.remove("shake");
+  }, 500);
 
   eInput.onkeyup = () => {
     checkEmail();

@@ -12,7 +12,6 @@ class Article {
     public $priceoff;
     public $oldprice;
 
-
     function __construct(array $article =[]){
 
         $this->titulli=isset($article['titulli']) ? $article['titulli'] : null;

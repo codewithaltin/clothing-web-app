@@ -34,6 +34,8 @@
     }
   }
 ?>
+<title>Register Page | ALTINIUM</title>
+
 <header id="header"><?php include 'header.php'?></header>
 <div id="regpage">
   <h3>PERSONAL DETAILS</h3>

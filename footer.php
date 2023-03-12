@@ -1,5 +1,4 @@
-  
-<div class="footerContainer">
+  <div class="footerContainer">
   <hr id="line">
   <div class="options">
     <link rel="stylesheet" href="./style/style.css">

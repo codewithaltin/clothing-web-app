@@ -20,9 +20,10 @@
             }
         }
    }
-   $artikujt=Article::getList("1 LIMIT 10");
 
 ?>
+<title>Log-In Page | ALTINIUM</title>
+
   <header id="header"><?php include 'header.php'?></header>
     <div id="logindiv">
       <div id="log">

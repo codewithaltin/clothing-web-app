@@ -69,3 +69,57 @@ ALTER TABLE `artikujt`
 ALTER TABLE `artikujt`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `perdoruesit`
+--
+
+CREATE TABLE `perdoruesit` (
+  `id` int(11) NOT NULL,
+  `emri` varchar(80) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `roli` set('0','1') DEFAULT '1',
+  `id_dyqani` int(11) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `perdoruesit`
+--
+
+INSERT INTO `perdoruesit` (`id`, `emri`, `email`, `password`, `roli`, `id_dyqani`) VALUES
+(1, 'Altin', 'asdfsdf@sdf.com', 'altini', '1', 1),
+(2, 'Altin', 'asdfsdf@sdf.com', 'asdf', '1', 1),
+(3, 'Morinaa', 'isthisworking@ubt-uni.net', 'asdf', '1', 1),
+(4, 'Altin', 'asdfff@hotmail.com', 'asdd', '1', 1),
+(5, 'Altin', 'asdfff@hotmail.com', 'Altin', '1', 1),
+(6, 'Altin', 'test@hotmail.com', 'altini', '1', 1),
+(7, 'Altin', 'ilirianthaqi@live.com', 'altin', '1', 1),
+(8, 'Anita', 'anitahoti84@gmail.com', 'anita', '1', 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `perdoruesit`
+--
+ALTER TABLE `perdoruesit`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `perdoruesit`
+--
+ALTER TABLE `perdoruesit`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

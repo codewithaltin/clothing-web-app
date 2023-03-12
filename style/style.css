@@ -24,7 +24,80 @@ a {
   text-decoration: none;
   color: var(--primary-dark-color);
 }
+/*Dashboard*/
+.dashboard {
+  padding: 20px;
+}
+.dashboard p {
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+.dashboard h1 {
+  font-size: 5rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-family: Roboto;
+}
+.dashboard table {
+  margin: 0 auto;
+}
+form {
+  width: 40%;
+}
+table {
+  border-collapse: collapse;
+  width: 70%;
+  margin: 0 auto;
+}
+thead {
+  background-color: #333;
+  color: white;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 2%;
+}
+tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
 
+tbody tr:nth-child(even) {
+  background-color: #eee;
+}
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  font-size: 1.2rem;
+}
+tbody th {
+  text-align: left;
+  font-weight: bolder;
+}
+caption {
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-align: left;
+  color: #333;
+  margin-top: 20px;
+}
+
+thead th {
+  width: 25%;
+}
+textarea {
+  width: inherit;
+  height: 150px;
+}
+.dashboard a {
+  padding: 1.3rem;
+  color: inherit;
+  text-decoration: underline;
+}
+.dashboard td,
+th {
+  padding: 5px;
+}
 nav {
   display: flex;
   height: 80px;
@@ -341,7 +414,6 @@ header nav {
 }
 .title {
   font-size: 3em;
-  color: red;
 }
 .collection p {
   position: absolute;

@@ -45,30 +45,27 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <link rel="stylesheet" href="../style/style.css">
         <title>Create Article</title>
     </head>
     <body>
-        <a href="article_list.php">Kthehu tek Lista</a>
-        <section class="featured section" id="featured">
-                <h1 class="section-title">All Products</h1>
-                <div class="featured__container bd-grid">
+        <section class="dashboard">
+            <p> <a href="article_list.php">Kthehu tek Lista</a></p>
+            <hr>
+                <h1>Enter Users Data Below</h1>
                     <?php if(isset($error_msg)){ ?>
                             <p class="messageError"><?php echo $error_msg; ?></p>
                     <?php } ?>
-                <form method="post">
-                        <label for="titulli">Title:</label>
-                        <input type="text" name="titulli" class="form-control" id="titulli" value="<?=$titulli ?>"><br>
-                        <label for="pershkrimi">Description:</label>
-                        <textarea name="pershkrimi" class="form-control" id="pershkrimi"><?= $pershkrimi ?></textarea><br>
-                        <label for="Cmimi">Price :</label>
-                        <input type="text" name="cmimi" class="form-control" id="cmimi" value="<?=$cmimi ?>"><br>
-                        <label for="foto">Photo path :</label>
-                        <input type="text" name="foto" class="form-control" id="foto" value="<?=$foto ?>"><br>
-                        <label for="priceoff">Price off:</label>
-                        <input placeholder='Optional' type="text" name="priceoff" class="form-control" id="priceoff" value="<?=$priceoff ?>"><br>
-                        <label for="olderprice">Older Price:</label>
-                        <input  placeholder='Optional' type="text" name="olderprice" class="form-control" id="olderprice" value="<?=$olderprice ?>"><br>
-                        <button type="submit" class="button" name="ruaj">Ruaj</button>
+                    <div class= "logindiv"> 
+              <form method="post">
+                     <input  placeholder="Title" type="text" name="titulli" class="input" id="titulli" value="<?=$titulli ?>"><br>
+                        <textarea placeholder="Description" name="pershkrimi" class="input" id="pershkrimi"><?= $pershkrimi ?></textarea><br>
+                        <input placeholder="Cmimi $" type="text" name="cmimi" class="input"" class="input" value="<?=$cmimi ?>"><br>
+                        <input placeholder="Photo" type="text" name="foto" class="input" id="foto" value="<?=$foto ?>"><br>
+                        <input placeholder='Price off (Optional)' type="text" name="priceoff" class="input" id="priceoff" value="<?=$priceoff ?>"><br>
+                        <input  placeholder='Older Price(Optional)' type="text" name="olderprice" class="input" id="olderprice" value="<?=$olderprice ?>"><br>
+                        <div class="bttn">
+                        <button type="submit" class="bttn" name="ruaj">CREATE</button></div>
                 </form>
-                </div>
+                    </div>
         </section>

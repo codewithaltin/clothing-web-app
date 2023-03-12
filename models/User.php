@@ -1,6 +1,7 @@
 <?php
 
-include_once (__DIR__ .'/../libs/BaseModel.php');
+require_once 'C:\xampp\htdocs\clothing_website\libs\BaseModel.php';
+require_once 'C:\xampp\htdocs\clothing_website\libs\AuthenticateUser.php';
 
 class User extends BaseModel{
     
@@ -28,7 +29,6 @@ class User extends BaseModel{
     public function setId($id){
         $this->id=$id;
     }
-
     public function save(){
         if(is_null($this->id)){
 
@@ -41,25 +41,23 @@ class User extends BaseModel{
             ]);
 
             return $new_id;
-        }else{
-
-            $new_id=$this->db->update("perdoruesit",[
-
-                "emri"=>$this->emri,
-                "email"=>$this->email,
-                "password"=>$this->password,
-                "roli"=>$this->roli,
-                "id_dyqani"=>$this->id_dyqani
-
-            ], "id = {$this->id}");
-
-            return $rezultati;
         }
     }
-    
-    public function delete(){
+    public function update(){
+        $new_id=$this->db->update("perdoruesit",[
+            "emri"=>$this->emri,
+            "email"=>$this->email,
+            "password"=>$this->password,
+            "roli"=>$this->roli,
+            "id_dyqani"=>$this->id_dyqani
 
+        ], "id = {$this->id}");
+
+        return $rezultati;
+    }
+    public function delete(){
         $rezultati=$this->db->delete("perdoruesit","id={$this->id}");
+        header("Location:admin/user_list.php");
         return $rezultati;
     }
 
@@ -126,7 +124,73 @@ class User extends BaseModel{
         return $user;
     }
 
-    public function isAdmin(){
+  public static function login($submit){
+    if(isset($_POST[$submit])){
+       
+        $email_err=null;
+        $pass_err=null;
+        $email=$_POST['email'];
+        $password=$_POST['password'];
+        if ($email == '' ) {
+        $email_err = "Please enter your email.";
+        }
+        if($password ==''){
+          $pass_err = "Please enter your password";
+        }
+        else{
+            $user=AuthenticateUser::authenticate($email,$password);
+            if($user !== false){
+                    AuthenticateUser::save($user->toArray());
+                   if($user->roli == 0){
+                    header('Location: admin/dashboard.php');
+                    }
+                    else{
+                      header('Location:index.php');
+                    }
+                    exit();
+            }
+            else{
+                $pass_err="Te dhenat e gabuara!";
+            }
+   }
+   return array($email_err,$pass_err);
+  }
+}
+  public static function register($submit){
+    if(isset($_POST[$submit])){
+
+        $error_msg=null;
+            $email=$_POST['email'];
+            $password=$_POST['password'];
+            $repeatpassword=$_POST['repeatpassword'];
+            $firstName=$_POST['firstname'];
+            $lastName=$_POST['lastname'];
+    
+        if($email==""){
+            $error_msg="Email eshte e detyruesheme";
+        }else if ($password=="" || $repeatpassword == ""){
+            $error_msg="Password must match";
+        }
+        else if($password != $repeatpassword){
+            $error_msg ="Passwords must match.";
+        }
+        else if ($firstName == '' || $lastName == '' ){
+          $error_msg = "Emri dhe mbiemri is required.";
+          }
+        if(is_null($error_msg)){
+            $user=new User();
+            $user->emri=$firstName;
+            $user->email=$email;
+            $user->password=$password;
+            $user->roli=1;
+            $user->id_dyqani=1;
+            $user->save();
+            header("Location:login.php");
+            exit;
+        }
+      }
+  }
+    public  function isAdmin(){
         if($this->roli==0){
             return true;
         }

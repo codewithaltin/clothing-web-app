@@ -1,38 +1,8 @@
 <?php
   require_once "config.php";
-  require_once "libs/AuthenticateUser.php";
-  if(isset($_POST['sign-up'])){
-
-    $error_msg=null;
-        $email=$_POST['email'];
-        $password=$_POST['password'];
-        $repeatpassword=$_POST['repeatpassword'];
-        $firstName=$_POST['firstname'];
-        $lastName=$_POST['lastname'];
-
-    if($email==""){
-        $error_msg="Email eshte e detyruesheme";
-    }else if ($password=="" || $repeatpassword == ""){
-        $error_msg="Password is required";
-    }
-    else if($password != $repeatpassword){
-        $error_msg ="Passwords must match.";
-    }
-    else if ($firstName == '' || $lastName == '' ){
-      $error_msg = "Emri dhe mbiemri is required.";
-      }
-    if(is_null($error_msg)){
-        $user=new User();
-        $user->emri=$firstName;
-        $user->email=$email;
-        $user->password=$password;
-        $user->roli=1;
-        $user->id_dyqani=1;
-        $user->save();
-        header("Location:index.php");
-        exit;
-    }
-  }
+  require_once "models/User.php";
+  User::register('sign-up');
+  
 ?>
 <title>Register Page | ALTINIUM</title>
 

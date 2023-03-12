@@ -1,9 +1,8 @@
 <?php
     require_once "config.php";
-    require_once /*WEBROOT .*/ "libs/AuthenticateUser.php";
-    require_once /*WEBROOT .*/ "models/User.php";
+    require_once "libs/AuthenticateUser.php";
+    require_once  'C:\xampp\htdocs\clothing_website\models\User.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,6 +28,9 @@
   </label>
   <ul>
     <li><a href="search.php">SEARCH</a></li>
+    <!--<?php// if(User::isAdmin())?>
+          <li><a href="admin/dashboard.php">Dashboard</a></li>
+          <?php?>  -->       
     <?php if (AuthenticateUser::is_logged()) {?>
       <li><a href="admin/logout.php">Log Out</a></li>
       <li>
@@ -38,9 +40,17 @@
         alt="Cart"
       />
     </li>
-      <?php } else { ?>                      
+      <?php } else { ?>  
+                            
     <li><a href="login.php">LOG IN</a></li>
     <li><a href="register.php">REGISTER</a></li>
+    <li>
+      <img
+        src="https://i.postimg.cc/q7R4p81H/wishlist-icon.png"
+        width="15px"
+        alt="Cart"
+      />
+    </li>
     <?php } ?>
 
   </ul>

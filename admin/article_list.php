@@ -25,16 +25,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style/style.css">
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         <title>Article List</title>
     </head>
     <body>
-        <a href="dashboard.php">Kthehu ne Dashboard</a>
-        <section class="featured section" id="featured">
-        <div class="table-content">
-        <h3 class="page-title">Lista e artikujve </h3>
-        <a href="article_create.php">Kliko per te krijuar nje artikuj te ri</a>
+        <section class="dashboard">
+        <p><a href="dashboard.php">Kthehu ne Dashboard</a></p>
+        <p><a href="article_create.php">Kliko per te krijuar nje artikuj te ri</a></p>
+        <hr>
             <table class="table" border="1px solid black">
+                <caption>Lista e artikujve</caption>
                 <thead>
                     <tr>
                         <th>Titulli</th>
@@ -47,7 +48,7 @@
                 <tbody>
                     <?php foreach($artikujt as $artikull) { ?>
                         <tr>
-                            <td><?= $artikull->titulli ?></td>
+                            <th><?= $artikull->titulli ?></th>
                             <td><?= $artikull->pershkrimi ?></td>
                             <td><?= $artikull->data ?></td>
                             <td><?= $artikull->cmimi ?></td>

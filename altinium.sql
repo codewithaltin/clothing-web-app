@@ -37,17 +37,17 @@ CREATE TABLE `artikujt` (
 -- Dumping data for table `artikujt`
 --
 
-INSERT INTO `artikujt` (`id`, `titulli`, `cmimi`, `data`, `id_dyqani`, `pershkrimi`, `foto`, `priceoff`, `olderprice`) VALUES
-(1, 'MADDEN GIRL FINLEE BOOTIE', '70.00', '2022-05-03', 1, 'Finlee bootie from Madden Girl.', 'images/card1.jpg', 50, 95),
-(2, 'CROPPED DENIM JACKET', '20.00', '2022-05-11', 1, 'Lapel collar jacket with long sleeves and cuffs.', 'images/card2.jpg', 30, 91),
-(3, 'LINEN BLEND BLAZER', '50.00', '2022-04-10', 1, 'Straight fit blazer.', 'images/card3.jpg', 40, 90),
-(4, 'HEELED SLINGBACKS', '45.00', '2022-05-11', 1, 'Mid-height heel slingbacks.', 'images/card4.jpg', 20, 86),
-(5, 'PLEATED SUIT PANTS', '35.00', '2022-03-08', 1, 'Oversized fit wide pants.', 'images/card5.jpg', 15, 95),
-(6, 'FAUX FUR HOODED JACKET', '45.00', '2022-03-11', 1, 'Hooded jacket with long sleeves.', 'images/card6.jpg', 25, 121),
-(7, 'LACE UP LEATHER SANDALS', '35.00', '2022-02-11', 1, ' Mid-heel leather sandals.', 'images/card7.jpg', 25, 84),
-(8, 'MID RISE - SUPER SKINNY', '30.00', '2022-02-10', 1, ' Jeans in very stretchy fabric with mid rise.', 'images/card8.jpg', 30, 87),
-(9, 'BIRDSEYE SUIT JACKET', '40.00', '2022-06-11', 1, ' Straight fit blazer.', 'images/card9.jpg', 50, 124),
-(10, 'STRIPED JACQUARD TIE', '60.00', '2023-05-10', 1, 'Tie Made Of Silk Fabric.', 'images/card10.jpg', 25, 110);
+INSERT INTO `artikujt` ( `titulli`, `cmimi`, `data`, `id_dyqani`, `pershkrimi`, `foto`, `priceoff`, `olderprice`) VALUES
+('MADDEN GIRL FINLEE BOOTIE', '70.00', '2022-05-03', 1, 'Finlee bootie from Madden Girl.', 'images/card1.jpg', 50, 95),
+('CROPPED DENIM JACKET', '20.00', '2022-05-11', 1, 'Lapel collar jacket with long sleeves and cuffs.', 'images/card2.jpg', 30, 91),
+('LINEN BLEND BLAZER', '50.00', '2022-04-10', 1, 'Straight fit blazer.', 'images/card3.jpg', 40, 90),
+('HEELED SLINGBACKS', '45.00', '2022-05-11', 1, 'Mid-height heel slingbacks.', 'images/card4.jpg', 20, 86),
+('PLEATED SUIT PANTS', '35.00', '2022-03-08', 1, 'Oversized fit wide pants.', 'images/card5.jpg', 15, 95),
+('FAUX FUR HOODED JACKET', '45.00', '2022-03-11', 1, 'Hooded jacket with long sleeves.', 'images/card6.jpg', 25, 121),
+('LACE UP LEATHER SANDALS', '35.00', '2022-02-11', 1, ' Mid-heel leather sandals.', 'images/card7.jpg', 25, 84),
+('MID RISE - SUPER SKINNY', '30.00', '2022-02-10', 1, ' Jeans in very stretchy fabric with mid rise.', 'images/card8.jpg', 30, 87),
+('BIRDSEYE SUIT JACKET', '40.00', '2022-06-11', 1, ' Straight fit blazer.', 'images/card9.jpg', 50, 124),
+( 'STRIPED JACQUARD TIE', '60.00', '2023-05-10', 1, 'Tie Made Of Silk Fabric.', 'images/card10.jpg', 25, 110);
 
 --
 -- Indexes for dumped tables
@@ -89,15 +89,15 @@ CREATE TABLE `perdoruesit` (
 -- Dumping data for table `perdoruesit`
 --
 
-INSERT INTO `perdoruesit` (`id`, `emri`, `email`, `password`, `roli`, `id_dyqani`) VALUES
-(1, 'Altin', 'asdfsdf@sdf.com', 'altini', '1', 1),
-(2, 'Altin', 'asdfsdf@sdf.com', 'asdf', '1', 1),
-(3, 'Morinaa', 'isthisworking@ubt-uni.net', 'asdf', '1', 1),
-(4, 'Altin', 'asdfff@hotmail.com', 'asdd', '1', 1),
-(5, 'Altin', 'asdfff@hotmail.com', 'Altin', '1', 1),
-(6, 'Altin', 'test@hotmail.com', 'altini', '1', 1),
-(7, 'Altin', 'ilirianthaqi@live.com', 'altin', '1', 1),
-(8, 'Anita', 'anitahoti84@gmail.com', 'anita', '1', 1);
+INSERT INTO `perdoruesit` ( `emri`, `email`, `password`, `roli`, `id_dyqani`) VALUES
+( 'Altin', 'asdfsdf@sdf.com', 'altini', '1', 1),
+('Altin', 'asdfsdf@sdf.com', 'asdf', '1', 1),
+('Morinaa', 'isthisworking@ubt-uni.net', 'asdf', '1', 1),
+( 'Altin', 'asdfff@hotmail.com', 'asdd', '1', 1),
+('Altin', 'asdfff@hotmail.com', 'Altin', '1', 1),
+('Altin', 'test@hotmail.com', 'altini', '1', 1),
+('Altin', 'ilirianthaqi@live.com', 'altin', '1', 1),
+('Anita', 'anitahoti84@gmail.com', 'anita', '1', 1);
 
 --
 -- Indexes for dumped tables

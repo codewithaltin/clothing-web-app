@@ -1,6 +1,6 @@
 <?php
-   require_once "libs/Session.php";
-   list($email_err,$pass_err) = Session::login('login');
+   require_once "models/User.php";
+   list($email_err,$pass_err) = User::login('login');
 ?>
 <title>Log-In Page | ALTINIUM</title>
   <header id="header"><?php include 'header.php'?></header>
@@ -8,7 +8,7 @@
       <div id="log">
         <section>
           <h3>LOG IN</h3>
-          <form id="form"  method ="POST" style="position:relative;">
+          <form id="form"  method ="POST">
             <div class="field email">
               <input
                 name='email'

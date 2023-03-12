@@ -15,32 +15,39 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    <link rel="stylesheet" href="../style/style.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dashboard</title>
     </head>
     <body>
-    
 <section class="featured section" id="featured">
-<h3 class="page-title">Lista e perdoruesve</h3>
 
+<section class="dashboard">
+    <p><a href="dashboard.php">Kthehu</a>
+</p>
 <table class="tableUser" border="1px solid black">
+    <caption>Lista e perdoruesve</caption>
     <thead>
         <tr>
             <th>Emri</th>
             <th>Email</th>
             <th>Roli</th>
+            <th colspan='2'>Actions</th>
         </tr>
     </thead>
-    <tbody>
-        <?php foreach($users as $user): ?>
-        <tr>
-            <td><?= $user->emri ?></td>
-            <td><?= $user->email ?></td>
-            <td><?= ($user->roli == "0")? "admin":"perdorues" ; ?></td>
-        </tr>
-        <?php endforeach?>
-        <a href="dashboard.php">Kthehu</a>
-    </tbody>
-</table>
-</section>
+        <tbody>
+            <?php foreach($users as $user): ?>
+            <tr>
+                <th><?= $user->emri ?></th>
+                <td><?= $user->email ?></td>
+                <td><?= ($user->isAdmin()) ? "<b>ADMIN</b>":"Perdorues" ; ?></td>
+                <td><a href="<php ($user->delete())?>">Delete</a></td>
+                <td><a href="user_update.php">Update</a></td>
+            </tr>
+            <?php endforeach?>
+        </tbody>
+    </table>
+    </section>
+</body>
+</html>

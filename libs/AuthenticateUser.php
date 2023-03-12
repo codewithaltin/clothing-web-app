@@ -1,6 +1,6 @@
 <?php
-
 require_once (__DIR__ .'/../models/User.php');
+require_once 'Session.php';
 
 class AuthenticateUser{
 

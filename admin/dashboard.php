@@ -10,14 +10,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <!-- <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>-->
+        <link rel="stylesheet" href="../style/style.css">
         <title>Admin Dashboard</title>
     </head>
     <body>
-    <section class="featured section" id="featured">
-    <p class="title">Dashboard per Adminin</p>
-    <a href="../index.php"  style="float:right;" > Kthehu ne main page</a>
-    <h1 class="text">Welcome
+    <section class="dashboard" id="featured">
+    <p><b>Dashboard per Adminin</b></p>
+    <p><a href="../index.php"> Kthehu ne main page</a></p>
+    <hr>
+    <h1>Welcome
         <strong>
             <?php
             $logged_user=AuthenticateUser::get();
@@ -25,7 +26,8 @@
             ?>
         </strong>
     </h1> 
+    <p><b>You have the below acceses:</b></p>
     <p><a href="user_list.php">Lista e Userave</a></p>
     <p><a href="article_list.php">Lista e Artikujve</a></p>
     <p><a href="article_create.php">Krijo Artikull</a></p>
-    </section>
+</section>

@@ -1,7 +1,8 @@
 <?php
-require_once  'C:\xampp\htdocs\WebProjectSneakers\libs\BaseModel.php';
 
-class Article {
+require_once  'C:\xampp\htdocs\clothing_website\libs\BaseModel.php';
+
+class Article extends BaseModel{
     private $id;
     public $titulli;
     public $cmimi;
@@ -10,9 +11,11 @@ class Article {
     public $foto;
     public $id_dyqani;
     public $priceoff;
-    public $oldprice;
+    public $olderprice;
+
 
     function __construct(array $article =[]){
+        parent::__construct();
 
         $this->titulli=isset($article['titulli']) ? $article['titulli'] : null;
         $this->cmimi=isset($article['cmimi']) ? $article['cmimi'] : null;
@@ -21,16 +24,16 @@ class Article {
         $this->pershkrimi=isset($article['pershkrimi']) ? $article['pershkrimi'] : null;
         $this->foto=isset($article['foto']) ? $article['foto'] : null;
         $this->priceoff=isset($article['priceoff']) ? $article['priceoff'] : null;
-        $this->oldprice=isset($article['olderprice']) ? $article['olderprice'] : null;
-
+        $this->olderprice=isset($article['olderprice']) ? $article['olderprice'] : null;
     }
     public function getId(){
         return $this->id;
     }
     public function save(){
         if(is_null($this->id)){
+
             $new_id =$this->db->insert("artikujt",[
-               "titulli"=>$this->titulli,
+                "titulli"=>$this->titulli,
                 "cmimi"=>$this->cmimi,
                 "data"=>$this->data,
                 "id_dyqani"=>$this->id_dyqani,
@@ -60,10 +63,14 @@ class Article {
         return $rezultati;
     }
     public static function getById(int $id){
+
         $sql="SELECT * FROM artikujt WHERE id= :id";
+
         $db=new Database();
+
         $datta=$db->select($sql,[":id"=>$id]);
-          if(count($datta)){
+
+        if(count($datta)){
             $article=new Article();
             $article->id = $datta[0]["id"];
             $article->titulli=$datta[0]["titulli"];
@@ -81,8 +88,11 @@ class Article {
     }
     public static function getList(string $condition="1"){
         $sql="SELECT * FROM artikujt WHERE $condition";
+
         $db=new Database();
+
         $dattaa=$db->select($sql);
+
         $artikujt=[];
 
         if(count($dattaa)){
@@ -98,7 +108,6 @@ class Article {
                 $article->foto=$data["foto"];
                 $article->priceoff=$data["priceoff"];
                 $article->olderprice=$data["olderprice"];
-
                 array_push($artikujt,$article);
             }
 

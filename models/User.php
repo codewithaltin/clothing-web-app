@@ -33,7 +33,6 @@ class User extends BaseModel{
         if(is_null($this->id)){
 
             $new_id=$this->db->insert("perdoruesit",[
-
                 "emri"=>$this->emri,
                 "email"=>$this->email,
                 "password"=>$this->password,

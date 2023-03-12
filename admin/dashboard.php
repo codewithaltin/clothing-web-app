@@ -17,6 +17,7 @@
     <section class="dashboard" id="featured">
     <p><b>Dashboard per Adminin</b></p>
     <p><a href="../index.php"> Kthehu ne main page</a></p>
+    <p><a href="logout.php">Log Out</a></p>
     <hr>
     <h1>Welcome
         <strong>

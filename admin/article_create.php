@@ -52,7 +52,7 @@
         <section class="dashboard">
             <p> <a href="article_list.php">Kthehu tek Lista</a></p>
             <hr>
-                <h1>Enter Users Data Below</h1>
+                <h2>Enter Users Data Below</h2>
                     <?php if(isset($error_msg)){ ?>
                             <p class="messageError"><?php echo $error_msg; ?></p>
                     <?php } ?>

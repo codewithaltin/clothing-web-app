@@ -33,20 +33,17 @@
             <th>Emri</th>
             <th>Email</th>
             <th>Roli</th>
-            <th>Dyqani</th>
         </tr>
     </thead>
     <tbody>
-        <? foreach($users as $user){ ?>
+        <?php foreach($users as $user): ?>
         <tr>
             <td><?= $user->emri ?></td>
             <td><?= $user->email ?></td>
-            <td><?= ($user->tipi == "0")? "admin":"perdorues" ; ?></td>
+            <td><?= ($user->roli == "0")? "admin":"perdorues" ; ?></td>
         </tr>
-        <?}?>
+        <?php endforeach?>
+        <a href="dashboard.php">Kthehu</a>
     </tbody>
 </table>
 </section>
-<?php
-    include WEBROOT . "footer.php"
-?>

@@ -1,15 +1,34 @@
-//LOGIN VALIDATION
+/*function checkValidation() {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let emailText, passwordText;
+  let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
+  if (password == "") {
+    passwordText = "Password is not valid!";
+  }
+  if (!email.match(pattern)) {
+    emailText = "Email is not valid!";
+  }
+  let emailErr = document.getElementById("emailError");
+  emailErr.innerHTML = emailText;
+  emailErr.style.color = "red";
+  let passErr = document.getElementById("passwordError");
+  passErr.innerHTML = passwordText;
+  emailErr.style.color = "red";
+}
+*/
+//LOGIN VALIDATION
+/*
 const form = document.querySelector("form");
 (eField = form.querySelector(".email")),
   (eInput = eField.querySelector("input")),
   (pField = form.querySelector(".password")),
   (pInput = pField.querySelector("input"));
-
 form.onsubmit = (e) => {
   e.preventDefault();
-  eInput.value == "" ? eField.classList.add("shake", "error") : checkEmail();
-  pInput.value == "" ? pField.classList.add("shake", "error") : checkPass();
+  eInput.value == "" ? eField.classList.add("error") : checkEmail();
+  pInput.value == "" ? pField.classList.add("error") : checkPass();
 
   setTimeout(() => {
     eField.classList.remove("shake");
@@ -52,4 +71,4 @@ form.onsubmit = (e) => {
   ) {
     window.location.href = form.getAttribute("action");
   }
-};
+};*/

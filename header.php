@@ -1,6 +1,7 @@
 <?php
     require_once "config.php";
     require_once /*WEBROOT .*/ "libs/AuthenticateUser.php";
+    require_once /*WEBROOT .*/ "models/User.php";
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +29,7 @@
   </label>
   <ul>
     <li><a href="search.php">SEARCH</a></li>
-    <?php if (AuthenticateUser::is_logged()) { ?>
+    <?php if (AuthenticateUser::is_logged()) {?>
       <li><a href="admin/logout.php">Log Out</a></li>
       <li>
       <img

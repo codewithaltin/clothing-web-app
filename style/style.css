@@ -47,6 +47,9 @@ nav ul {
   flex-wrap: wrap;
   list-style: none;
 }
+.text {
+  color: red;
+}
 nav ul li {
   margin: 0 10px;
 }
@@ -336,7 +339,10 @@ header nav {
   height: 100%;
   object-fit: cover;
 }
-
+.title {
+  font-size: 3em;
+  color: red;
+}
 .collection p {
   position: absolute;
   top: 50%;

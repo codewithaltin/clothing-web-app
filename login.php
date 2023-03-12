@@ -6,10 +6,10 @@
         $error_msg=null;
         $email=$_POST['email'];
         $password=$_POST['password'];
-        /*
+        
         if ($email == '' || $password == '') {
         $error_msg = "Te dhenat duhet plotesohen ";
-        }else{*/
+        }else{
             $user=AuthenticateUser::authenticate($email,$password);
             if($user !== false){
                     AuthenticateUser::save($user->toArray());
@@ -20,10 +20,12 @@
                       header('Location:index.php');
                     }
                     exit();
-            }else{
+            }
+            else{
                 $error_msg="Te dhenat e gabuara!";
             }
    }
+  }
 ?>
 <title>Log-In Page | ALTINIUM</title>
 
@@ -41,6 +43,7 @@
                 placeholder="Email Address"
               />
               <div class="error error-txt size6">Email can't be blank</div>
+
             </div>
             <br />
             <div class="field password">
@@ -55,6 +58,7 @@
             <p class="size6 pointer">HAVE YOU FORGOTTEN YOUR PASSWORD?</p>
             <div class="bttn">
               <button type="submit" class='button' name ='login'>LOG IN</button>
+             
             </div>
           </form>
         </section>
@@ -86,4 +90,4 @@
       </div>
     </div>
     <footer id="footer"><?php include 'footer.php'?></footer>
-   <script src='script.validation.js'></script>
+   <script src='script/validation.js'></script>

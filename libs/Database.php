@@ -38,20 +38,6 @@ class Database{
             return $error;
         }
     }
-    public function select(string $sql,array $bindArray=array(),$fetchMode=PDO::FETCH_ASSOC){
-        $stmt=$this->connection->prepare($sql);
-
-        foreach($bindArray as $key=>$value){
-            $stmt->bindValue("$key",$value);
-        }
-
-        $stmt->execute();
-
-        return $stmt->fetchAll($fetchMode);
-    }
-    public function delete(string $table,string $where,int $limit=1){
-        return $this->connection->exec("DELETE FROM $table WHERE $where LIMIT $limit");
-    }
     public function update(string $table,array $field_values,string $where){
         $vlerat=null;
 
@@ -74,5 +60,21 @@ class Database{
         }else{
             return $stmt->errorInfo();
         }
+    }
+
+    public function select(string $sql,array $bindArray=array(),$fetchMode=PDO::FETCH_ASSOC){
+        $stmt=$this->connection->prepare($sql);
+
+        foreach($bindArray as $key=>$value){
+            $stmt->bindValue("$key",$value);
+        }
+
+        $rezultati=$stmt->execute();
+        
+        return $stmt->fetchAll($fetchMode);
+    }
+
+    public function delete(string $table,string $where,int $limit=1){
+        return $this->connection->exec("DELETE FROM $table WHERE $where LIMIT $limit");
     }
 }

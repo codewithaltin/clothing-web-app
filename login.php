@@ -6,21 +6,24 @@
         $error_msg=null;
         $email=$_POST['email'];
         $password=$_POST['password'];
+        /*
         if ($email == '' || $password == '') {
         $error_msg = "Te dhenat duhet plotesohen ";
-        }else{
-            $user=AuthenticateUser::authenticate($email,md5($password));
+        }else{*/
+            $user=AuthenticateUser::authenticate($email,$password);
             if($user !== false){
                     AuthenticateUser::save($user->toArray());
-                    $error_msg="Te dhenat e sakta";
-                        header('Location: index.php');
+                    if($user->roli == 0){
+                    header('Location: admin/dashboard.php');
+                    }
+                    else{
+                      header('Location:index.php');
+                    }
                     exit();
             }else{
                 $error_msg="Te dhenat e gabuara!";
             }
-        }
    }
-
 ?>
 <title>Log-In Page | ALTINIUM</title>
 
@@ -83,4 +86,4 @@
       </div>
     </div>
     <footer id="footer"><?php include 'footer.php'?></footer>
-    <script src="script/validation.js"></script>
+   <script src='script.validation.js'></script>

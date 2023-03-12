@@ -37,7 +37,6 @@ form.onsubmit = (e) => {
       eField.classList.add("valid");
     }
   }
-
   function checkPass() {
     if (pInput.value == "") {
       pField.classList.add("error");
@@ -47,7 +46,6 @@ form.onsubmit = (e) => {
       pField.classList.add("valid");
     }
   }
-
   if (
     !eField.classList.contains("error") &&
     !pField.classList.contains("error")

@@ -15,7 +15,7 @@ class AuthenticateUser{
             ":password"=>$password
         ]);
 
-        if(count($rezultati)){
+        if(count($rezultati)>0){
             $user=new User([
                 "emri"=>$rezultati[0]["emri"],
                 "email"=>$rezultati[0]["email"],
@@ -30,6 +30,7 @@ class AuthenticateUser{
             return false;
         }
     }
+    
     public static function save(Array $user){
         Session::set("user_auth",$user);
     }
@@ -48,5 +49,4 @@ class AuthenticateUser{
     public static function get(){
         return Session::get("user_auth");
     }
- 
 }

@@ -4,6 +4,6 @@ include_once WEBROOT . "/libs/AuthenticateUser.php";
 
 AuthenticateUser::logout();
 
-header("Location: /login.php");
+header("Location:../login.php");
 
 exit();

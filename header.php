@@ -29,7 +29,7 @@
   <ul>
     <li><a href="search.php">SEARCH</a></li>
     <?php if (AuthenticateUser::is_logged()) { ?>
-      <li><a href="login.php">Log Out</a></li>
+      <li><a href="admin/logout.php">Log Out</a></li>
       <li>
       <img
         src="https://i.postimg.cc/q7R4p81H/wishlist-icon.png"

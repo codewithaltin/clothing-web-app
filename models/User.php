@@ -110,7 +110,6 @@ class User extends BaseModel{
 
                 array_push($users,$user);
             }
-
             return $users;
         }else{
             return array();

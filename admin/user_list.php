@@ -2,7 +2,6 @@
     include_once "config.php";
     include_once WEBROOT . "libs/AuthenticateUser.php";
     include_once WEBROOT . "models/User.php";
-    
     if(!AuthenticateUser::is_logged()){
         header("Location: /login.php");
     }

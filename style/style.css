@@ -101,6 +101,9 @@ textarea {
 th {
   padding: 5px;
 }
+form {
+  position: relative;
+}
 nav {
   display: flex;
   height: 80px;

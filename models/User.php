@@ -33,6 +33,7 @@ class User extends BaseModel{
         if(is_null($this->id)){
 
             $new_id=$this->db->insert("perdoruesit",[
+
                 "emri"=>$this->emri,
                 "email"=>$this->email,
                 "password"=>$this->password,
@@ -41,26 +42,37 @@ class User extends BaseModel{
             ]);
 
             return $new_id;
+        }else{
+
+            $new_id=$this->db->update("perdoruesit",[
+
+                "emri"=>$this->emri,
+                "email"=>$this->email,
+                "password"=>$this->password,
+                "roli"=>$this->roli,
+                "id_dyqani"=>$this->id_dyqani
+
+            ], "id = {$this->id}");
+
+            return $rezultati;
         }
     }
-    public function update(){
-        $new_id=$this->db->update("perdoruesit",[
-            "emri"=>$this->emri,
-            "email"=>$this->email,
-            "password"=>$this->password,
-            "roli"=>$this->roli,
-            "id_dyqani"=>$this->id_dyqani
-
-        ], "id = {$this->id}");
-
-        return $rezultati;
-    }
     public function delete(){
-        $rezultati=$this->db->delete("perdoruesit","id={$this->id}");
-        header("Location:admin/user_list.php");
+        $rezultati=$this->db->delete("perdoruesit","id=$id");
         return $rezultati;
     }
-
+    /*public function deleteUser($id)
+    {
+        $sql = "DELETE from perdoruesi where userid=$id";
+        $query = $this->con->query($sql);
+        $data = array();
+        if ($query) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+*/
     public static function getById(int $id){
         $sql="SELECT * FROM perdoruesit WHERE id= :id";
 
@@ -190,10 +202,10 @@ class User extends BaseModel{
         }
       }
   }
-    public  function isAdmin(){
-        if($this->roli==0){
-            return true;
-        }
-        return false;
+  public function isAdmin(){
+    if($this->roli==0){
+        return true;
     }
+    return false;
+}
 }

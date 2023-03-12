@@ -90,14 +90,20 @@ CREATE TABLE `perdoruesit` (
 --
 
 INSERT INTO `perdoruesit` ( `emri`, `email`, `password`, `roli`, `id_dyqani`) VALUES
-( 'Altin', 'asdfsdf@sdf.com', 'altini', '1', 1),
+( 'Altin', 'official@altinium.com', 'admin', '0', 1),
 ('Altin', 'asdfsdf@sdf.com', 'asdf', '1', 1),
 ('Morinaa', 'isthisworking@ubt-uni.net', 'asdf', '1', 1),
 ( 'Altin', 'asdfff@hotmail.com', 'asdd', '1', 1),
 ('Altin', 'asdfff@hotmail.com', 'Altin', '1', 1),
+('Altin', 'asdfff@hotmail.com', 'Altin', '1', 1),
+('Altin', 'asdfff@hotmail.com', 'Altin', '1', 1),
+('Altin', 'asdfff@hotmail.com', 'Altin', '1', 1),
 ('Altin', 'test@hotmail.com', 'altini', '1', 1),
 ('Altin', 'ilirianthaqi@live.com', 'altin', '1', 1),
-('Anita', 'anitahoti84@gmail.com', 'anita', '1', 1);
+('Anita', 'anitahoti84@gmail.com', 'anita', '1', 1),
+('Anita', 'anitahoti84@gmail.com', 'anita', '1', 1),
+('Nina', 'nina@gmail.com', 'nina', '1', 1),
+('Nina', 'nina@gmail.com', 'ninana', '1', 1);
 
 --
 -- Indexes for dumped tables

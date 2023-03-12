@@ -14,6 +14,7 @@
         <title>Admin Dashboard</title>
     </head>
     <body>
+
     <section class="dashboard" id="featured">
     <p><b>Dashboard per Adminin</b></p>
     <p><a href="../index.php"> Kthehu ne main page</a></p>

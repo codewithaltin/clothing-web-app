@@ -11,6 +11,7 @@
         header("Location: /admin/profile.php");
     }
     $users=User::getList();
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,8 +43,9 @@
                 <th><?= $user->emri ?></th>
                 <td><?= $user->email ?></td>
                 <td><?= ($user->isAdmin()) ? "<b>ADMIN</b>":"Perdorues" ; ?></td>
-                <td><a href="<php ($user->delete())?>">Delete</a></td>
+                <td><a href='<?//php $user->delete($user->id)?>'>Delete</a></td>
                 <td><a href="user_update.php">Update</a></td>
+                </form>
             </tr>
             <?php endforeach?>
         </tbody>

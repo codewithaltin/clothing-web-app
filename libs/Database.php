@@ -73,8 +73,34 @@ class Database{
         
         return $stmt->fetchAll($fetchMode);
     }
-
-    public function delete(string $table,string $where,int $limit=1){
+    public function delete($tablename,$id){
+        $sql = "DELETE from tablename WHERE id=$id";
+        $query = $this->con->query($sql);
+        $data = array();
+        if ($query) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+   /* public function delete(string $table,$id,int $limit=1){
         return $this->connection->exec("DELETE FROM $table WHERE $where LIMIT $limit");
     }
+   /* public function delete($table, $where){
+        $condition ="";
+        foreach($where as $key => $value){
+            $condition .= $key. "= '" .$value."' AND ";
+
+        }
+        $condition = substr($condition,0-5);
+        $sql = "DELETE FROM ". $table . " WHERE " . $condition." ";
+
+        $result = $this->db->query($sql);
+
+        if($result){
+            return true;
+        }else{
+            return false;
+        }
+    }*/
 }

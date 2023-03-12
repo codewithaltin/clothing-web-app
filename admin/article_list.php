@@ -19,6 +19,7 @@
     }
 
     $artikujt=Article::getList();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

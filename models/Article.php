@@ -1,5 +1,5 @@
 <?php
-
+require_once  'C:\xampp\htdocs\WebProjectSneakers\libs\BaseModel.php';
 
 class Article {
     private $id;

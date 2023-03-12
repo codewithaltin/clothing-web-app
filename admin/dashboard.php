@@ -2,7 +2,7 @@
     require_once "config.php";
     require_once WEBROOT . "libs/AuthenticateUser.php";
     if(!AuthenticateUser::is_logged()){
-        header("Location: logIn.php");
+        header("Location: login.php");
     }
 ?>
 <!DOCTYPE html>

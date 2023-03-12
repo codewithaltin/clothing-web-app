@@ -11,7 +11,6 @@
         header("Location: /admin/profile.php");
     }
     $users=User::getList();
-   // include WEBROOT . "subcComponent/header.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">

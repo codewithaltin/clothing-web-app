@@ -19,7 +19,6 @@
         }else if($pershkrimi==""){
             $error_msg="Pershkrimi eshte fushe e detyrueshme";
         }
-
         if(is_null($error_msg)){
 
             $artikulli=new Article();

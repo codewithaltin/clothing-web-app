@@ -1,49 +1,26 @@
 <?php
-   require_once "config.php";
-   require_once "libs/AuthenticateUser.php";
-
-    if(isset($_POST['login'])){
-        $error_msg=null;
-        $email=$_POST['email'];
-        $password=$_POST['password'];
-        
-        if ($email == '' || $password == '') {
-        $error_msg = "Te dhenat duhet plotesohen ";
-        }else{
-            $user=AuthenticateUser::authenticate($email,$password);
-            if($user !== false){
-                    AuthenticateUser::save($user->toArray());
-                    if($user->roli == 0){
-                    header('Location: admin/dashboard.php');
-                    }
-                    else{
-                      header('Location:index.php');
-                    }
-                    exit();
-            }
-            else{
-                $error_msg="Te dhenat e gabuara!";
-            }
-   }
-  }
+   require_once "libs/Session.php";
+   list($email_err,$pass_err) = Session::login('login');
 ?>
 <title>Log-In Page | ALTINIUM</title>
-
   <header id="header"><?php include 'header.php'?></header>
     <div id="logindiv">
       <div id="log">
         <section>
           <h3>LOG IN</h3>
-          <form id="form"  method ="POST">
+          <form id="form"  method ="POST" style="position:relative;">
             <div class="field email">
               <input
                 name='email'
                 type="text"
                 class="inputEmail input"
-                placeholder="Email Address"
+                placeholder="E-MAIL ADDRESS"
               />
-              <div class="error error-txt size6">Email can't be blank</div>
-
+              <!--<div class="error error-txt size6">Email can't be blank</div>-->
+              <small id="userErr" style="  color: red;visibility: hidden;float: left;">You cannot leave this field blank</small>
+              <?php if(isset($email_err)){ ?>
+                <small style="  color: red;visibility: visible;position:absolute;left:0;" id="userErr"><?php echo $email_err;?></small>
+                <?php }?>
             </div>
             <br />
             <div class="field password">
@@ -51,10 +28,15 @@
                 name='password'
                 type="password"
                 class="inputPasswd input"
-                placeholder="Password"
+                placeholder="PASSWORD"
               />
-              <div class="error error-txt size6">Password can't be blank</div>
+              <!--<div class="error error-txt size6">Password can't be blank</div>-->
+              <small id="passErr" style="  color: red;visibility: hidden;float: left;">You cannot leave this field blank</small>
+              <?php if(isset($pass_err)){ ?>
+                <small style="  color: red;visibility: visible;float: left; position:absolute;left:0;"><?php echo $pass_err;?></small>
+                <?php }?>
             </div>
+            <br>
             <p class="size6 pointer">HAVE YOU FORGOTTEN YOUR PASSWORD?</p>
             <div class="bttn">
               <button type="submit" class='button' name ='login'>LOG IN</button>

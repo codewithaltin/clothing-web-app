@@ -11,6 +11,8 @@
     $pershkrimi=isset($_POST['pershkrimi']) ? $_POST['pershkrimi'] : null;
     $cmimi=isset($_POST['cmimi']) ? $_POST['cmimi'] : null;
     $foto=isset($_POST['foto']) ? $_POST['foto'] : null;
+    $priceoff=isset($_POST['priceoff']) ? $_POST['priceoff'] : null;
+    $olderprice=isset($_POST['olderprice']) ? $_POST['olderprice'] : null;
     if(isset($_POST['ruaj'])){
 
         $error_msg=null;
@@ -26,6 +28,8 @@
             $artikulli->pershkrimi=$pershkrimi;
             $artikulli->cmimi=$cmimi;
             $artikulli->foto=$foto;
+            $artikulli->priceoff=$priceoff;
+            $artikulli->olderprice=$olderprice;
             $artikulli->id_dyqani=1;
             $artikulli->data=date("Y-m-d");
             $artikulli->save();
@@ -52,27 +56,19 @@
                             <p class="messageError"><?php echo $error_msg; ?></p>
                     <?php } ?>
                 <form method="post">
-                    <div class="form-group">
-                        <label for="titulli">Titulli i artikullit:</label>
-                        <input type="text" name="titulli" class="form-control" id="titulli" value="<?=$titulli ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="pershkrimi">Pershkrimi :</label>
-                        <textarea name="pershkrimi" class="form-control" id="pershkrimi"><?= $pershkrimi ?></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="titulli">Cmimi :</label>
-                        <input type="text" name="cmimi" class="form-control" id="cmimi" value="<?=$cmimi ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="titulli">Foto path :</label>
-                        <input type="text" name="foto" class="form-control" id="foto" value="<?=$foto ?>">
-                    </div>
-                    
-                    <button type="submit" class="button" name="ruaj">Ruaj</button>
+                        <label for="titulli">Title:</label>
+                        <input type="text" name="titulli" class="form-control" id="titulli" value="<?=$titulli ?>"><br>
+                        <label for="pershkrimi">Description:</label>
+                        <textarea name="pershkrimi" class="form-control" id="pershkrimi"><?= $pershkrimi ?></textarea><br>
+                        <label for="Cmimi">Price :</label>
+                        <input type="text" name="cmimi" class="form-control" id="cmimi" value="<?=$cmimi ?>"><br>
+                        <label for="foto">Photo path :</label>
+                        <input type="text" name="foto" class="form-control" id="foto" value="<?=$foto ?>"><br>
+                        <label for="priceoff">Price off:</label>
+                        <input placeholder='Optional' type="text" name="priceoff" class="form-control" id="priceoff" value="<?=$priceoff ?>"><br>
+                        <label for="olderprice">Older Price:</label>
+                        <input  placeholder='Optional' type="text" name="olderprice" class="form-control" id="olderprice" value="<?=$olderprice ?>"><br>
+                        <button type="submit" class="button" name="ruaj">Ruaj</button>
                 </form>
                 </div>
         </section>
-
-
-<!--<br /><b>Notice</b>:  Undefined variable: qmimi in <b>C:\xampp\htdocs\WebProjectSneakers\admin\article_create.php</b> on line <b>56</b><br />

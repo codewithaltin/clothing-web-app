@@ -1,7 +1,7 @@
 <?php 
-    require_once "config.php";
-    require_once "models/Article.php";
-    require_once "libs/AuthenticateUser.php";
+    include_once "config.php";
+    include_once "models/Article.php";
+    include_once "libs/AuthenticateUser.php";
 
     $artikujt=Article::getList();
     ?>
@@ -37,7 +37,9 @@
       <?php foreach ($artikujt as $i => $articleT){?>
         <div class="product-card">
           <div class="product-image">
+          <?php if(!$articleT->priceoff == '')?>
             <span class="discount-tag"><?php echo $articleT->priceoff?> % OFF</span>
+          <?php?>
             <img src="<?php echo $articleT->foto; ?>" class="product-thumb" alt="" />
             <button class="card-btn">add to wishlist</button>
           </div>
@@ -46,7 +48,9 @@
             <p class="product-short-description">
             <?php echo $articleT->pershkrimi; ?>
             </p>
+            <?php if(!$articleT->olderprice == '')?>
             <span class="price">$<?php echo $articleT->cmimi; ?></span><span class="actual-price">$<?php echo $articleT->olderprice?>$</span>
+            <?php?>
           </div>
         </div>
         <?php }?>

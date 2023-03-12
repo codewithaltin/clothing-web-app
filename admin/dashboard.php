@@ -11,11 +11,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <!-- <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>-->
-        <title>Dashboard</title>
+        <title>Admin Dashboard</title>
     </head>
     <body>
     <section class="featured section" id="featured">
     <p class="title">Dashboard per Adminin</p>
+    <a href="../index.php"  style="float:right;" > Kthehu ne main page</a>
     <h1 class="text">Welcome
         <strong>
             <?php

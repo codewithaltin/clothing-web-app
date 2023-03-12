@@ -18,8 +18,6 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../assets/css/styles.css"
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         <title>Dashboard</title>
     </head>
     <body>
@@ -27,7 +25,7 @@
 <section class="featured section" id="featured">
 <h3 class="page-title">Lista e perdoruesve</h3>
 
-<table class="tableUser">
+<table class="tableUser" border="1px solid black">
     <thead>
         <tr>
             <th>Emri</th>

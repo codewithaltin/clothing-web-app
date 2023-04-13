@@ -28,10 +28,10 @@
   </label>
   <ul>
     <li><a href="search.php">SEARCH</a></li>
-    <!--<?php// if(User::isAdmin())?>
-          <li><a href="admin/dashboard.php">Dashboard</a></li>
-          <?php?>  -->       
     <?php if (AuthenticateUser::is_logged()) {?>
+    <?php if(User::getById(AuthenticateUser::get()["id"])->isAdmin()):?>
+          <li><a href="admin/dashboard.php">Dashboard</a></li>
+          <?php endif?>      
       <li><a href="admin/logout.php">Log Out</a></li>
       <li>
       <img

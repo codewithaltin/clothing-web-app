@@ -1,8 +1,10 @@
+
+
 <?php
     require_once "config.php";
     require_once WEBROOT . "libs/AuthenticateUser.php";
     require_once WEBROOT . "models/User.php";
-    
+
     if(!AuthenticateUser::is_logged()){
         header("Location: /login.php");
     }
@@ -11,7 +13,8 @@
         header("Location: /admin/profile.php");
     }
     $users=User::getList();
- 
+    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,8 +46,9 @@
                 <th><?= $user->emri ?></th>
                 <td><?= $user->email ?></td>
                 <td><?= ($user->isAdmin()) ? "<b>ADMIN</b>":"Perdorues" ; ?></td>
-                <td><a href='<?//php $user->delete($user->id)?>'>Delete</a></td>
-                <td><a href="user_update.php">Update</a></td>
+                <!--<td><a href="<?php// $user->delete() ?>">Delete</a></td>-->
+                <td><a href="delete_user.php?id=<?php echo $user->getId()?>"  onclick="return confirm('Are You Sure ?')">Delete</a></td>
+                <td><a href="update_user.php?id=<?php echo $user->getId()?>">Update</a></td>
                 </form>
             </tr>
             <?php endforeach?>

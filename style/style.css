@@ -380,7 +380,7 @@ header nav {
   align-items: center;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
   cursor: pointer;
-  z-index: 8;
+  z-index: 3;
 }
 
 .pre-btn {
@@ -654,6 +654,7 @@ form .field.error .error {
     width: 100%;
     margin: 40px 0;
   }
+
   nav ul li a {
     width: 100%;
     margin-left: -100%;

@@ -60,6 +60,7 @@ class Article extends BaseModel{
     }
     public function delete(){
         $rezultati=$this->db->delete("artikujt","id={$this->id}");
+        header("Location:../admin/article_list.php");
         return $rezultati;
     }
     public static function getById(int $id){

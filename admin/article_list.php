@@ -44,6 +44,7 @@
                         <th>Data</th>
                         <th>Cmimi</th>
                         <th>Foto path</th>
+                        <th colspan='2'>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,6 +55,8 @@
                             <td><?= $artikull->data ?></td>
                             <td><?= $artikull->cmimi ?></td>
                             <td><?= $artikull->foto ?></td>
+                            <td><a href="delete_article.php?id=<?php echo $artikull->getId()?>" onclick="return confirm('Are You Sure ?')">Delete</a></td>
+                            <td><a href="update_article.php?id=<?php echo $artikull->getId()?>">Update</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>

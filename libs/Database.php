@@ -38,7 +38,7 @@ class Database{
             return $error;
         }
     }
-    public function update(string $table,array $field_values,string $where){
+   /* public function update(string $table,array $field_values,string $where){
         $vlerat=null;
 
         foreach($field_values as $key=>$value){
@@ -48,11 +48,13 @@ class Database{
         $vlerat=rtrim($vlerat,',');
 
         $stmt=$this->connection->prepare("Update $table SET $vlerat WHERE $where");
+        echo $vlerat;
 
+        $vlerat=explode(',',$vlerat);
         foreach($vlerat as $key=>$value){
             $stmt->bindValue(":$key",$value);
         }
-
+            
         $rezultati=$stmt->execute();
 
         if($rezultati){
@@ -60,8 +62,36 @@ class Database{
         }else{
             return $stmt->errorInfo();
         }
+    }*/
+    
+    public function update($table, $CV = array(), $condition){
+        if($CV !=null)
+        {
+            $columns = '';
+            $x = 1;
+            foreach($CV as $key => $value)
+            {
+                $columns .= "$key='$value'";
+                if($x < count($CV))
+                {
+                    $columns .= ",";
+                }
+                $x++;
+            }
+            $query = $this->connection->prepare("UPDATE $table SET $columns WHERE $condition");
+           
+            foreach($vlerat as $key=>$value){
+                $stmt->bindValue(":$key",$value);
+            }
+            if($query->execute())
+                return true;
+            else
+                return false;
+        }
+        return false;
     }
 
+     
     public function select(string $sql,array $bindArray=array(),$fetchMode=PDO::FETCH_ASSOC){
         $stmt=$this->connection->prepare($sql);
 
@@ -73,7 +103,7 @@ class Database{
         
         return $stmt->fetchAll($fetchMode);
     }
-    public function delete($tablename,$id){
+    /*public function delete($tablename,$id){
         $sql = "DELETE from tablename WHERE id=$id";
         $query = $this->con->query($sql);
         $data = array();
@@ -82,8 +112,8 @@ class Database{
         }else{
             return false;
         }
-    }
-   /* public function delete(string $table,$id,int $limit=1){
+    }*/
+    public function delete(string $table,string $where,int $limit=1){
         return $this->connection->exec("DELETE FROM $table WHERE $where LIMIT $limit");
     }
    /* public function delete($table, $where){

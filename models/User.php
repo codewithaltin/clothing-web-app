@@ -30,6 +30,7 @@ class User extends BaseModel{
         $this->id=$id;
     }
     public function save(){
+
         if(is_null($this->id)){
 
             $new_id=$this->db->insert("perdoruesit",[
@@ -44,7 +45,7 @@ class User extends BaseModel{
             return $new_id;
         }else{
 
-            $new_id=$this->db->update("perdoruesit",[
+            $rezultati=$this->db->update("perdoruesit",[
 
                 "emri"=>$this->emri,
                 "email"=>$this->email,
@@ -58,9 +59,12 @@ class User extends BaseModel{
         }
     }
     public function delete(){
-        $rezultati=$this->db->delete("perdoruesit","id=$id");
+        $rezultati=$this->db->delete("perdoruesit","id={$this->id}");
+        header("Location:../admin/user_list.php");
         return $rezultati;
     }
+
+
     /*public function deleteUser($id)
     {
         $sql = "DELETE from perdoruesi where userid=$id";
@@ -152,14 +156,10 @@ class User extends BaseModel{
         else{
             $user=AuthenticateUser::authenticate($email,$password);
             if($user !== false){
-                    AuthenticateUser::save($user->toArray());
-                   if($user->roli == 0){
-                    header('Location: admin/dashboard.php');
-                    }
-                    else{
-                      header('Location:index.php');
-                    }
-                    exit();
+                AuthenticateUser::save($user->toArray());
+                header('Location:index.php');
+                
+                exit();
             }
             else{
                 $pass_err="Te dhenat e gabuara!";
@@ -170,7 +170,6 @@ class User extends BaseModel{
 }
   public static function register($submit){
     if(isset($_POST[$submit])){
-
         $error_msg=null;
             $email=$_POST['email'];
             $password=$_POST['password'];

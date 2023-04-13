@@ -1,5 +1,6 @@
 <?php
    require_once "config.php";
+   
 class Session{
     public static function start(){
         session_start();

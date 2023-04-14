@@ -27,7 +27,7 @@
             $artikulli->titulli=$titulli;
             $artikulli->pershkrimi=$pershkrimi;
             $artikulli->cmimi=$cmimi;
-            $artikulli->foto=$foto;
+            $artikulli->foto= "images/" . $foto;
             $artikulli->priceoff=$priceoff;
             $artikulli->olderprice=$olderprice;
             $artikulli->id_dyqani=1;
@@ -61,7 +61,7 @@
                      <input  placeholder="Title" type="text" name="titulli" class="input" id="titulli" value="<?=$titulli ?>"><br>
                         <textarea placeholder="Description" name="pershkrimi" class="input" id="pershkrimi"><?= $pershkrimi ?></textarea><br>
                         <input placeholder="Cmimi $" type="text" name="cmimi"class="input" value="<?=$cmimi ?>"><br>
-                        <input placeholder="Photo" type="text" name="foto" class="input" id="foto" value="<?=$foto ?>"><br>
+                        <input placeholder="Photo" type="file" name="foto" class="input" id="foto" value="<?=$foto ?>"><br>
                         <input placeholder='Price off (Optional)' type="text" name="priceoff" class="input" id="priceoff" value="<?=$priceoff ?>"><br>
                         <input  placeholder='Older Price(Optional)' type="text" name="olderprice" class="input" id="olderprice" value="<?=$olderprice ?>"><br>
                         <div class="bttn">

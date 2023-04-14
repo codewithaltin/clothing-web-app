@@ -628,6 +628,10 @@ form .field.error .error {
   margin-bottom: 2.1em;
 }
 
+.signUpText {
+  visibility: hidden;
+}
+
 @media (max-width: 768px) {
   nav .menu-btn i {
     color: black;
@@ -635,6 +639,9 @@ form .field.error .error {
   }
   #click:checked ~ .menu-btn i:before {
     content: "\f00d";
+  }
+  .signUpText {
+    visibility: visible;
   }
   nav ul {
     position: fixed;
@@ -704,6 +711,7 @@ form .field.error .error {
     font-weight: bold;
     font-size: 35px;
   }
+
   .input {
     border-bottom: 0.01px solid gray;
     margin-right: 20px;

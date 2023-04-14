@@ -38,32 +38,6 @@ class Database{
             return $error;
         }
     }
-   /* public function update(string $table,array $field_values,string $where){
-        $vlerat=null;
-
-        foreach($field_values as $key=>$value){
-            $vlerat .="$key = :$key,";
-        }
-
-        $vlerat=rtrim($vlerat,',');
-
-        $stmt=$this->connection->prepare("Update $table SET $vlerat WHERE $where");
-        echo $vlerat;
-
-        $vlerat=explode(',',$vlerat);
-        foreach($vlerat as $key=>$value){
-            $stmt->bindValue(":$key",$value);
-        }
-            
-        $rezultati=$stmt->execute();
-
-        if($rezultati){
-            return $rezultati;
-        }else{
-            return $stmt->errorInfo();
-        }
-    }*/
-    
     public function update($table, $CV = array(), $condition){
         if($CV !=null)
         {
@@ -103,34 +77,9 @@ class Database{
         
         return $stmt->fetchAll($fetchMode);
     }
-    /*public function delete($tablename,$id){
-        $sql = "DELETE from tablename WHERE id=$id";
-        $query = $this->con->query($sql);
-        $data = array();
-        if ($query) {
-            return true;
-        }else{
-            return false;
-        }
-    }*/
+   
     public function delete(string $table,string $where,int $limit=1){
         return $this->connection->exec("DELETE FROM $table WHERE $where LIMIT $limit");
     }
-   /* public function delete($table, $where){
-        $condition ="";
-        foreach($where as $key => $value){
-            $condition .= $key. "= '" .$value."' AND ";
 
-        }
-        $condition = substr($condition,0-5);
-        $sql = "DELETE FROM ". $table . " WHERE " . $condition." ";
-
-        $result = $this->db->query($sql);
-
-        if($result){
-            return true;
-        }else{
-            return false;
-        }
-    }*/
 }

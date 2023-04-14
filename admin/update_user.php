@@ -10,8 +10,7 @@ $user = User::getbyId($id);
 if(isset($_POST['save'])){
     $user->emri = $_POST['emri'];
     $user->email = $_POST['email'];
-    $user->password = $_POST['password'];
-    $user->roli = $_POST['roli'];
+    $user->roli = (strtolower($_POST['roli']) == "admin") ? 0 :1 ;
     $user->save();
     header("Location:user_list.php");
 
@@ -28,10 +27,14 @@ if(isset($_POST['save'])){
 <section class="dashboard">
 <div class="logindiv"> 
     <form method="post">
+        <h5>Emri:</h5>
         <input type="text" class="input" name="emri" value="<?php echo $user->emri ?>" placeholder="Name"><br>
+       <br>
+        <h5>Email:</h5>
         <input type="text" class="input" name="email" value="<?php echo $user->email ?>" placeholder="Email"><br>
-        <input type="text" class="input" name="password" value="<?php echo $user->password ?>" placeholder="Password"><br>
-        <input type="text" class="input" name="roli" value="<?php echo $user->roli ?>" placeholder="Role"><br>
+       <br>
+        <h5>Roli:</h5>
+                    <input type="text" class="input" name="roli" value="<?php echo ($user->isAdmin()) ? "ADMIN":"Perdorues" ?>" placeholder="Role"><br>
         <div class="bttn">
             <button type="submit" class="bttn" name="save">UPDATE</button></div>
     </form>

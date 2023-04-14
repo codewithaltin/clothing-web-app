@@ -6,16 +6,13 @@ class AuthenticateUser{
 
     public static function authenticate(string $email,string $password){
 
-        $sql="SELECT * FROM perdoruesit Where email= :email AND password= :password";
-
+        $sql="SELECT * FROM perdoruesit Where email= :email";
         $db=new Database();
-
         $rezultati=$db->select($sql,[
             ":email"=>$email,
-            ":password"=>$password
         ]);
-
-        if(count($rezultati)>0){
+        $hashedPass = $rezultati[0]["password"];
+        if(count($rezultati)>0 && password_verify($password,$hashedPass)){
             $user=new User([
                 "emri"=>$rezultati[0]["emri"],
                 "email"=>$rezultati[0]["email"],
@@ -34,6 +31,7 @@ class AuthenticateUser{
     public static function save(Array $user){
         Session::set("user_auth",$user);
     }
+   
 
     public static function is_logged(){
         if(is_null(self::get())){

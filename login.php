@@ -38,6 +38,7 @@
             </div>
             <br>
             <p class="size6 pointer">HAVE YOU FORGOTTEN YOUR PASSWORD?</p>
+            <p class="size6 signUpText">DON'T HAVE AN ACCOUNT? <a href="register.php " style =" text-decoration: underline;">SIGN UP</a></p>
             <div class="bttn">
               <button type="submit" class='button' name ='login'>LOG IN</button>
              
@@ -72,4 +73,3 @@
       </div>
     </div>
     <footer id="footer"><?php include 'footer.php'?></footer>
-   <script src='script/validation.js'></script>

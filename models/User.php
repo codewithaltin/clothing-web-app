@@ -2,6 +2,7 @@
 
 require_once 'C:\xampp\htdocs\clothing_website\libs\BaseModel.php';
 require_once 'C:\xampp\htdocs\clothing_website\libs\AuthenticateUser.php';
+require_once 'C:\xampp\htdocs\clothing_website\libs\Session.php';
 
 class User extends BaseModel{
     
@@ -34,14 +35,15 @@ class User extends BaseModel{
         if(is_null($this->id)){
 
             $new_id=$this->db->insert("perdoruesit",[
-
                 "emri"=>$this->emri,
                 "email"=>$this->email,
-                "password"=>$this->password,
+                "password"=>password_hash($this->password, 
+                PASSWORD_DEFAULT),
                 "roli"=>$this->roli,
                 "id_dyqani"=>$this->id_dyqani
             ]);
-
+            
+    
             return $new_id;
         }else{
 
@@ -49,7 +51,8 @@ class User extends BaseModel{
 
                 "emri"=>$this->emri,
                 "email"=>$this->email,
-                "password"=>$this->password,
+                "password"=>password_hash($this->password, 
+                PASSWORD_DEFAULT),
                 "roli"=>$this->roli,
                 "id_dyqani"=>$this->id_dyqani
 
@@ -63,20 +66,6 @@ class User extends BaseModel{
         header("Location:../admin/user_list.php");
         return $rezultati;
     }
-
-
-    /*public function deleteUser($id)
-    {
-        $sql = "DELETE from perdoruesi where userid=$id";
-        $query = $this->con->query($sql);
-        $data = array();
-        if ($query) {
-            return true;
-        }else{
-            return false;
-        }
-    }
-*/
     public static function getById(int $id){
         $sql="SELECT * FROM perdoruesit WHERE id= :id";
 
@@ -147,22 +136,26 @@ class User extends BaseModel{
         $pass_err=null;
         $email=$_POST['email'];
         $password=$_POST['password'];
-        if ($email == '' ) {
-        $email_err = "Please enter your email.";
+        if ($email == ''  || !str_contains($email, '@') || !str_ends_with($email,".com")) {
+        $email_err = "Incorrect e-mail";
         }
         if($password ==''){
-          $pass_err = "Please enter your password";
+          $pass_err = "Incorrect password";
         }
+        if($email_err && $pass_err){ 
+            return array($email_err,$pass_err);}
         else{
             $user=AuthenticateUser::authenticate($email,$password);
             if($user !== false){
                 AuthenticateUser::save($user->toArray());
                 header('Location:index.php');
-                
                 exit();
             }
-            else{
-                $pass_err="Te dhenat e gabuara!";
+            else
+            {
+                $email_err ="";
+                $pass_err = "Incorrect Password." ;
+
             }
    }
    return array($email_err,$pass_err);

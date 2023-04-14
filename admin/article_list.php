@@ -39,6 +39,7 @@
                 <caption>Lista e artikujve</caption>
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Titulli</th>
                         <th>Pershkrimi</th>
                         <th>Data</th>
@@ -50,6 +51,8 @@
                 <tbody>
                     <?php foreach($artikujt as $artikull) { ?>
                         <tr>
+                            
+                            <th><?= $artikull->getId()?></th>
                             <th><?= $artikull->titulli ?></th>
                             <td><?= $artikull->pershkrimi ?></td>
                             <td><?= $artikull->data ?></td>

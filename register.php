@@ -28,9 +28,9 @@
       </div>
       <br />
        <div id="checklast">
-          <input  id="checkbox" name ="email" type="checkbox" />I WISH TO RECEIVE ALTINIUM
-          NEWS ON MY E-MAIL<br>
-        <input id="checkbox" id="checkmark1" type="checkbox" /> I ACCEPT THE PRIVACY
+       <p class="size6">ALREADY HAVE AN ACCOUNT? <a href="login.php " style ="color:mediumblue;">SIGN IN</a></p>
+       <br> 
+       <input id="checkbox" id="checkmark1" type="checkbox" /> I ACCEPT THE PRIVACY
           STATEMENT          </div>
       <div class ="bttn" >
         <button type="submit" name ='sign-up'>CREATE ACCOUNT</button>
